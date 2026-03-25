@@ -1,7 +1,59 @@
---// UNIVERSAL Da Hood / Da Strike / Zee Hood — ULTRA v14 (ZEE EDITION FINAL)
---// 🔥 Исправлено: Zee Hood больше не определяется как unsupported
+--// UNIVERSAL Da Hood / Da Strike / Zee Hood — FINAL (NO PREDICTION FOR ZEE)
+--// 🔥 Для Zee Hood: предсказание = 0, camlock без смещения
+--// 🔥 Автоматический поиск ремоута + fallback на tool:Activate()
 
--- ========== АНТИЧИТ БАЙПАС ==========
+-- ========== НАСТРОЙКИ ==========
+getgenv().ResolveKey = "C"
+getgenv().CamlockKey = "F"
+getgenv().SilentKey = "V"
+getgenv().AutoAirKey = "B"
+getgenv().TriggerKey = "T"
+getgenv().GuiKey = "M"
+getgenv().LegitSmoothKey = "L"
+getgenv().BlatantKey = "K"
+getgenv().SilentLockKey = "Q"
+getgenv().AutoShootKey = "J"
+getgenv().ComboKey = "N"
+
+getgenv().Smoothing = 0.35
+getgenv().LegitSmoothing = 0.018
+getgenv().BlatantSmoothing = 0.070
+getgenv().Radius = 235
+getgenv().TriggerFOV = 50
+getgenv().JumpOffsetBase = -0.5
+getgenv().FallOffsetBase = -0.5
+getgenv().AirExtraBoostBase = 0.048
+getgenv().AirVelFactor = 0.00285
+getgenv().VelSmooth = 0.78
+getgenv().airTriggerDelay = 0.15
+getgenv().airFireRate = 0.015
+getgenv().TriggerFireRate = 0.032
+getgenv().useHoldMode = false
+
+-- ========== ОТКЛЮЧАЕМ ПРЕДСКАЗАНИЕ ДЛЯ ZEE HOOD ==========
+local placeId = game.PlaceId
+if placeId == 99692075138533 then
+    getgenv().BasePred = 0
+    getgenv().PredPingFactor = 0
+    getgenv().PredDistFactor = 0
+    getgenv().PredVelFactor = 0
+    getgenv().MaxPred = 0
+    getgenv().MinPred = 0
+    getgenv().PredX = 0
+    getgenv().PredY = 0
+    print("🔧 Zee Hood: предсказание отключено (0)")
+else
+    getgenv().BasePred = 0.16382699999999998
+    getgenv().PredPingFactor = 0.00029
+    getgenv().PredDistFactor = 0.000052
+    getgenv().PredVelFactor = 0.0102
+    getgenv().MaxPred = 0.16382699999999998
+    getgenv().MinPred = 0.16382699999999998
+    getgenv().PredX = 0.16382699999999998
+    getgenv().PredY = 0.16382699999999998
+end
+
+-- ========== АНТИЧИТ БАЙПАС (Adonis) ==========
 local g = getinfo or debug.getinfo
 local d = false
 local h = {}
@@ -31,42 +83,6 @@ end))
 setthreadidentity(7)
 -- ========== КОНЕЦ БАЙПАСА ==========
 
-getgenv().ResolveKey = "C"
-getgenv().CamlockKey = "F"
-getgenv().SilentKey = "V"
-getgenv().AutoAirKey = "B"
-getgenv().TriggerKey = "T"
-getgenv().GuiKey = "M"
-getgenv().LegitSmoothKey = "L"
-getgenv().BlatantKey = "K"
-getgenv().SilentLockKey = "Q"
-getgenv().AutoShootKey = "J"
-getgenv().ComboKey = "N"
-
--- === НАСТРОЙКИ ===
-getgenv().Smoothing = 0.35
-getgenv().LegitSmoothing = 0.018
-getgenv().BlatantSmoothing = 0.070
-getgenv().BasePred = 0.16382699999999998
-getgenv().PredPingFactor = 0.00029
-getgenv().PredDistFactor = 0.000052
-getgenv().PredVelFactor = 0.0102
-getgenv().MaxPred = 0.16382699999999998
-getgenv().MinPred = 0.16382699999999998
-getgenv().PredX = 0.16382699999999998
-getgenv().PredY = 0.16382699999999998
-getgenv().Radius = 235
-getgenv().TriggerFOV = 50
-getgenv().JumpOffsetBase = -0.5
-getgenv().FallOffsetBase = -0.5
-getgenv().AirExtraBoostBase = 0.048
-getgenv().AirVelFactor = 0.00285
-getgenv().VelSmooth = 0.78
-getgenv().airTriggerDelay = 0.15
-getgenv().airFireRate = 0.015
-getgenv().TriggerFireRate = 0.032
-getgenv().useHoldMode = false
-
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UIS = game:GetService("UserInputService")
@@ -80,62 +96,90 @@ local MainRemote = nil
 local ShootArg = nil
 local detectedGame = "Unknown"
 
--- ========== ОПРЕДЕЛЕНИЕ ИГРЫ ==========
-local placeId = game.PlaceId
-print("Place ID:", placeId)
+-- ========== ОПРЕДЕЛЕНИЕ РЕМОУТА ==========
+local function findShootRemote()
+    -- Приоритетные названия и аргументы
+    local candidates = {
+        {name = "MainEvent", arg = "UpdateMousePos"},
+        {name = "MAINEVENT", arg = "MOUSE"},
+        {name = "ChangeCharEvent", arg = "UpdateMousePos"},
+        {name = "MacroSpeedRemote", arg = "UpdateMousePos"},
+        {name = "MacroToggleRemote", arg = "UpdateMousePos"},
+        {name = "SprintToggle", arg = "UpdateMousePos"},
+        {name = "IsAFK", arg = "UpdateMousePos"},
+        {name = "NotifyEvent", arg = "UpdateMousePos"},
+        {name = "EmojiToggleEvent", arg = "UpdateMousePos"},
+        {name = "SaveFOV", arg = "UpdateMousePos"},
+        {name = "5dbf757a-9c7c-4551-ad0e-89ffa3b8ab1f", arg = "UpdateMousePos"},
+    }
+    
+    for _, cand in ipairs(candidates) do
+        local remote = RS:FindFirstChild(cand.name)
+        if remote and (remote:IsA("RemoteEvent") or remote:IsA("RemoteFunction")) then
+            return remote, cand.arg
+        end
+    end
+    
+    -- Если не нашли, берём любой RemoteEvent
+    for _, obj in ipairs(RS:GetChildren()) do
+        if obj:IsA("RemoteEvent") then
+            return obj, "UpdateMousePos"
+        end
+    end
+    return nil, nil
+end
 
-if placeId == 99692075138533 then
-    -- Zee Hood
-    detectedGame = "Zee Hood"
-    if RS:FindFirstChild("MainEvent") then
-        MainRemote = RS.MainEvent
+local function detectRemote()
+    if placeId == 99692075138533 then
+        detectedGame = "Zee Hood"
+        local remote, arg = findShootRemote()
+        if remote then
+            MainRemote = remote
+            ShootArg = arg
+            detectedGame = "Zee Hood (" .. remote.Name .. ")"
+            print("✅ Используем ремоут: " .. remote.Name .. " с аргументом: " .. arg)
+            return true
+        else
+            warn("⚠️ Не найден RemoteEvent. Будет использован tool:Activate()")
+            return false
+        end
+    elseif placeId == 2788229376 or placeId == 7213786345 then
+        MainRemote = RS:FindFirstChild("MainEvent")
         ShootArg = "UpdateMousePos"
+        detectedGame = "Da Hood"
+    elseif placeId == 5602055394 or placeId == 7951883376 then
+        MainRemote = RS:FindFirstChild("Bullets")
+        ShootArg = "MousePos"
+        detectedGame = "Hood Modded"
+    elseif RS:FindFirstChild("MAINEVENT") then
+        MainRemote = RS.MAINEVENT
+        ShootArg = "MOUSE"
+        detectedGame = "Da Strike"
     else
-        -- Ищем любой RemoteEvent с подходящим названием
         for _, remote in ipairs(RS:GetChildren()) do
-            if remote:IsA("RemoteEvent") then
-                local name = remote.Name:lower()
-                if name:find("main") or name:find("shoot") or name:find("mouse") or name:find("fire") then
-                    MainRemote = remote
-                    ShootArg = "UpdateMousePos"
-                    detectedGame = "Zee Hood (" .. remote.Name .. ")"
-                    break
-                end
+            if remote:IsA("RemoteEvent") and (remote.Name:lower():find("main") or remote.Name:lower():find("shoot") or remote.Name:lower():find("mouse")) then
+                MainRemote = remote
+                ShootArg = "UpdateMousePos"
+                detectedGame = "Copy (" .. remote.Name .. ")"
+                break
             end
         end
     end
-elseif placeId == 2788229376 or placeId == 7213786345 then
-    -- Da Hood
-    MainRemote = RS:FindFirstChild("MainEvent")
-    ShootArg = "UpdateMousePos"
-    detectedGame = "Da Hood"
-elseif placeId == 5602055394 or placeId == 7951883376 then
-    -- Hood Modded
-    MainRemote = RS:FindFirstChild("Bullets")
-    ShootArg = "MousePos"
-    detectedGame = "Hood Modded"
-elseif RS:FindFirstChild("MAINEVENT") then
-    MainRemote = RS.MAINEVENT
-    ShootArg = "MOUSE"
-    detectedGame = "Da Strike"
-else
-    -- Fallback: поиск любого RemoteEvent
-    for _, remote in ipairs(RS:GetChildren()) do
-        if remote:IsA("RemoteEvent") and (remote.Name:lower():find("main") or remote.Name:lower():find("shoot") or remote.Name:lower():find("mouse")) then
-            MainRemote = remote
-            ShootArg = "UpdateMousePos"
-            detectedGame = "Copy (" .. remote.Name .. ")"
-            break
-        end
-    end
+    return MainRemote ~= nil
 end
+
+detectRemote()
 
 if not MainRemote then
-    warn("⚠️ Не удалось определить ремоут для стрельбы. Silent Aim не будет работать.")
-else
-    print("✅ Detected: " .. detectedGame .. " | Remote: " .. MainRemote.Name .. " | Arg: " .. ShootArg)
+    warn("⚠️ Remote не найден. Silent Aim работать не будет, но Auto Shoot (J) будет стрелять через Activate()")
 end
 
+print("✅ Detected: " .. detectedGame)
+if MainRemote then
+    print("   Remote: " .. MainRemote.Name .. " | Arg: " .. tostring(ShootArg))
+end
+
+-- ========== ОСТАЛЬНЫЕ ПЕРЕМЕННЫЕ ==========
 local resolver = false
 local silentAim = false
 local camlock = false
@@ -186,7 +230,9 @@ spawn(function()
     end
 end)
 
+-- Функция предсказания (в Zee Hood возвращает 0)
 local function getPred(target)
+    if placeId == 99692075138533 then return 0 end
     local pingMs = currentPing
     local base = getgenv().BasePred + (pingMs * getgenv().PredPingFactor)
     if target and target.Character and LocalPlayer.Character then
@@ -270,10 +316,12 @@ local function getAimPos(plr)
     end
     pos = pos + Vector3.new(0, offsetY, 0)
     
+    -- Предсказание (в Zee Hood = 0)
+    local predTime = getPred(plr)
     local tX = getgenv().PredX
     local tY = getgenv().PredY
-    local predXZ = Vector3.new(vel.X * tX, 0, vel.Z * tX)
-    local predY = isAir and (vel.Y * tY - 0.5 * g * tY * tY + (vel.Y > 0 and 0.24 * tY or 0)) or (vel.Y * tY)
+    local predXZ = Vector3.new(vel.X * tX * predTime, 0, vel.Z * tX * predTime)
+    local predY = isAir and (vel.Y * tY * predTime - 0.5 * g * (tY * predTime)^2 + (vel.Y > 0 and 0.24 * (tY * predTime) or 0)) or (vel.Y * tY * predTime)
     
     return pos + predXZ + Vector3.new(0, predY, 0)
 end
@@ -284,12 +332,20 @@ local function hookTool(tool)
         local target = forceTarget
         if not target and silentLockEnabled and silentLockedTarget then target = silentLockedTarget
         elseif not target and silentAim then target = findClosest() end
-        if target and MainRemote then
-            local aimPos = getAimPos(target)
-            pcall(function()
-                MainRemote:FireServer(ShootArg, aimPos)
-            end)
-            hitCount += 1
+        if target then
+            if MainRemote then
+                local aimPos = getAimPos(target)
+                pcall(function()
+                    MainRemote:FireServer(ShootArg, aimPos)
+                end)
+                hitCount += 1
+            else
+                tool:Activate()
+                hitCount += 1
+            end
+        else
+            -- Если нет цели, просто стреляем (для Auto Shoot)
+            tool:Activate()
         end
     end)
 end
@@ -301,7 +357,7 @@ end
 if LocalPlayer.Character then onChar(LocalPlayer.Character) end
 LocalPlayer.CharacterAdded:Connect(onChar)
 
--- ========== GUI + DOT ==========
+-- ========== GUI ==========
 local sg = Instance.new("ScreenGui")
 sg.Name = "UniversalNeverMissDH"
 sg.Parent = game.CoreGui
@@ -336,16 +392,16 @@ Instance.new("UICorner", dot).CornerRadius = UDim.new(0,4)
 RunService.Heartbeat:Connect(function()
     local lt = lockedTarget and lockedTarget.Name or "None"
     local slt = silentLockedTarget and silentLockedTarget.Name or "None"
-    lbl.Text = "Game: "..detectedGame.." | PRED X: "..string.format("%.4f", getgenv().PredX).." | PRED Y: "..string.format("%.4f", getgenv().PredY).." | PING: "..currentPing.."ms\n"..
+    lbl.Text = "Game: "..detectedGame.." | PRED: "..(getgenv().PredX == 0 and "OFF" or "ON").." | PING: "..currentPing.."ms\n"..
                "Silent: "..(silentAim and "ON (V)" or "OFF").."\n"..
                "Silent Lock: "..(silentLockEnabled and "ON (Q) ["..slt.."]" or "OFF").."\n"..
                "Camlock: "..(camlock and "ON (F) ["..lt.."]" or "OFF").."\n"..
-               "Combo Mode: "..(comboMode and "ON (N)" or "OFF").."\n"..
+               "Combo: "..(comboMode and "ON (N)" or "OFF").."\n"..
                "Resolver: "..(resolver and "ON (C)" or "OFF").."\n"..
-               "Blatant Mode: "..(blatantMode and "ON (K) — Torso" or "OFF — Head").."\n"..
+               "Blatant: "..(blatantMode and "ON (K)" or "OFF").."\n"..
                "Auto Air: "..(autoAirFire and "ON (B)" or "OFF").."\n"..
-               "Trigger Bot: "..(triggerBot and "ON (T) [FOV 50]" or "OFF").."\n"..
-               "Auto Shoot: "..(autoShoot and "ON (J) [РАБОТАЕТ!]" or "OFF").."\n"..
+               "Trigger: "..(triggerBot and "ON (T)" or "OFF").."\n"..
+               "Auto Shoot: "..(autoShoot and "ON (J)" or "OFF").."\n"..
                "Hits: "..hitCount
 end)
 
@@ -400,14 +456,14 @@ UIS.InputBegan:Connect(function(input, gp)
         end
     elseif k == getgenv().AutoShootKey then
         autoShoot = not autoShoot
-        print("Auto Shoot: "..(autoShoot and "ВКЛ (стреляет через Activate!)" or "ВЫКЛ"))
+        print("Auto Shoot: "..(autoShoot and "ВКЛ" or "ВЫКЛ"))
     elseif k == getgenv().ComboKey then
         comboMode = not comboMode
         print("Combo Mode: "..(comboMode and "ВКЛ" or "ВЫКЛ"))
     end
 end)
 
--- ========== CAMLOCK + DOT ==========
+-- ========== CAMLOCK ==========
 RunService.RenderStepped:Connect(function()
     if camlock and lockedTarget then
         local aim = getAimPos(lockedTarget)
@@ -440,7 +496,7 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
--- ========== AUTO-UNLOCK + TRIGGER + AUTO SHOOT ==========
+-- ========== AUTO FUNCTIONS ==========
 RunService.Heartbeat:Connect(function()
     local function isLowHP(target)
         if not target or not target.Character then return true end
@@ -455,7 +511,6 @@ RunService.Heartbeat:Connect(function()
         silentLockEnabled = false; silentLockedTarget = nil
     end
     
-    -- TRIGGER BOT
     if triggerBot then
         local shouldFire = not getgenv().useHoldMode or UIS:IsMouseButtonPressed(Enum.UserInputType.MouseButton2)
         if shouldFire and tick() - lastTriggerFire >= getgenv().TriggerFireRate then
@@ -483,7 +538,6 @@ RunService.Heartbeat:Connect(function()
         end
     end
     
-    -- AUTO SHOOT
     if autoShoot then
         if tick() - lastAutoShoot >= getgenv().TriggerFireRate then
             local target = nil
@@ -510,7 +564,6 @@ RunService.Heartbeat:Connect(function()
         end
     end
     
-    -- AUTO AIR
     if autoAirFire then
         local target = (silentLockEnabled and silentLockedTarget) or (camlock and lockedTarget)
         if target and target.Character then
@@ -544,8 +597,13 @@ RunService.Heartbeat:Connect(function()
     end
 end)
 
-print("🚀 ULTRA v14 ZEE EDITION ЗАГРУЖЕН — Auto Shoot РАБОТАЕТ")
+print("🚀 ULTRA v14 FINAL — Silent Aim для Zee Hood (prediction = 0)")
 print("Q — Silent Lock | J — Auto Shoot | N — Combo | F — Camlock | T — Trigger | B — Auto Air | V — Silent Aim | K — Blatant")
 if placeId == 99692075138533 then
-    print("🎯 Zee Hood mode active — используем ремоут: " .. (MainRemote and MainRemote.Name or "не найден"))
+    if MainRemote then
+        print("✅ Используется ремоут: " .. MainRemote.Name .. " с аргументом " .. tostring(ShootArg))
+    else
+        print("⚠️ Remote не найден, используется tool:Activate() (Silent Aim работать не будет)")
+    end
+    print("🎯 Camlock работает без предсказания (0 prediction)")
 end
