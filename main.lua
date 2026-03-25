@@ -1,6 +1,5 @@
---// UNIVERSAL Da Hood / Da Strike / Zee Hood — FINAL (NO PREDICTION FOR ZEE)
---// 🔥 Для Zee Hood: предсказание = 0, camlock без смещения
---// 🔥 Автоматический поиск ремоута + fallback на tool:Activate()
+--// UNIVERSAL Da Hood / Da Strike / Zee Hood — FINAL WITH PREDICTION TOGGLE
+--// 🔥 Добавлена возможность переключать предсказание для camlock в игре (клавиша P)
 
 -- ========== НАСТРОЙКИ ==========
 getgenv().ResolveKey = "C"
@@ -14,7 +13,53 @@ getgenv().BlatantKey = "K"
 getgenv().SilentLockKey = "Q"
 getgenv().AutoShootKey = "J"
 getgenv().ComboKey = "N"
+getgenv().PredToggleKey = "P"   -- клавиша для включения/выключения предсказания
 
+-- Стандартные значения предсказания (для Da Hood и других)
+local DefaultPred = {
+    BasePred = 0.16382699999999998,
+    PredPingFactor = 0.00029,
+    PredDistFactor = 0.000052,
+    PredVelFactor = 0.0102,
+    MaxPred = 0.16382699999999998,
+    MinPred = 0.16382699999999998,
+    PredX = 0.16382699999999998,
+    PredY = 0.16382699999999998
+}
+
+-- Для Zee Hood по умолчанию предсказание выключено
+local placeId = game.PlaceId
+local isZeeHood = (placeId == 99692075138533)
+local predictionEnabled = not isZeeHood  -- для Zee Hood выключено, для остальных включено
+
+-- Функция для применения текущего состояния предсказания
+local function applyPredictionSettings()
+    if predictionEnabled then
+        getgenv().BasePred = DefaultPred.BasePred
+        getgenv().PredPingFactor = DefaultPred.PredPingFactor
+        getgenv().PredDistFactor = DefaultPred.PredDistFactor
+        getgenv().PredVelFactor = DefaultPred.PredVelFactor
+        getgenv().MaxPred = DefaultPred.MaxPred
+        getgenv().MinPred = DefaultPred.MinPred
+        getgenv().PredX = DefaultPred.PredX
+        getgenv().PredY = DefaultPred.PredY
+        print("✅ Предсказание ВКЛЮЧЕНО")
+    else
+        getgenv().BasePred = 0
+        getgenv().PredPingFactor = 0
+        getgenv().PredDistFactor = 0
+        getgenv().PredVelFactor = 0
+        getgenv().MaxPred = 0
+        getgenv().MinPred = 0
+        getgenv().PredX = 0
+        getgenv().PredY = 0
+        print("🔧 Предсказание ОТКЛЮЧЕНО (0 prediction)")
+    end
+end
+
+applyPredictionSettings()
+
+-- Остальные настройки
 getgenv().Smoothing = 0.35
 getgenv().LegitSmoothing = 0.018
 getgenv().BlatantSmoothing = 0.070
@@ -30,30 +75,7 @@ getgenv().airFireRate = 0.015
 getgenv().TriggerFireRate = 0.032
 getgenv().useHoldMode = false
 
--- ========== ОТКЛЮЧАЕМ ПРЕДСКАЗАНИЕ ДЛЯ ZEE HOOD ==========
-local placeId = game.PlaceId
-if placeId == 99692075138533 then
-    getgenv().BasePred = 0
-    getgenv().PredPingFactor = 0
-    getgenv().PredDistFactor = 0
-    getgenv().PredVelFactor = 0
-    getgenv().MaxPred = 0
-    getgenv().MinPred = 0
-    getgenv().PredX = 0
-    getgenv().PredY = 0
-    print("🔧 Zee Hood: предсказание отключено (0)")
-else
-    getgenv().BasePred = 0.16382699999999998
-    getgenv().PredPingFactor = 0.00029
-    getgenv().PredDistFactor = 0.000052
-    getgenv().PredVelFactor = 0.0102
-    getgenv().MaxPred = 0.16382699999999998
-    getgenv().MinPred = 0.16382699999999998
-    getgenv().PredX = 0.16382699999999998
-    getgenv().PredY = 0.16382699999999998
-end
-
--- ========== АНТИЧИТ БАЙПАС (Adonis) ==========
+-- ========== АНТИЧИТ БАЙПАС ==========
 local g = getinfo or debug.getinfo
 local d = false
 local h = {}
@@ -98,7 +120,6 @@ local detectedGame = "Unknown"
 
 -- ========== ОПРЕДЕЛЕНИЕ РЕМОУТА ==========
 local function findShootRemote()
-    -- Приоритетные названия и аргументы
     local candidates = {
         {name = "MainEvent", arg = "UpdateMousePos"},
         {name = "MAINEVENT", arg = "MOUSE"},
@@ -112,15 +133,12 @@ local function findShootRemote()
         {name = "SaveFOV", arg = "UpdateMousePos"},
         {name = "5dbf757a-9c7c-4551-ad0e-89ffa3b8ab1f", arg = "UpdateMousePos"},
     }
-    
     for _, cand in ipairs(candidates) do
         local remote = RS:FindFirstChild(cand.name)
         if remote and (remote:IsA("RemoteEvent") or remote:IsA("RemoteFunction")) then
             return remote, cand.arg
         end
     end
-    
-    -- Если не нашли, берём любой RemoteEvent
     for _, obj in ipairs(RS:GetChildren()) do
         if obj:IsA("RemoteEvent") then
             return obj, "UpdateMousePos"
@@ -130,7 +148,7 @@ local function findShootRemote()
 end
 
 local function detectRemote()
-    if placeId == 99692075138533 then
+    if isZeeHood then
         detectedGame = "Zee Hood"
         local remote, arg = findShootRemote()
         if remote then
@@ -178,6 +196,7 @@ print("✅ Detected: " .. detectedGame)
 if MainRemote then
     print("   Remote: " .. MainRemote.Name .. " | Arg: " .. tostring(ShootArg))
 end
+print("   Предсказание: " .. (predictionEnabled and "ВКЛ" or "ВЫКЛ") .. " (переключение: " .. getgenv().PredToggleKey .. ")")
 
 -- ========== ОСТАЛЬНЫЕ ПЕРЕМЕННЫЕ ==========
 local resolver = false
@@ -230,9 +249,8 @@ spawn(function()
     end
 end)
 
--- Функция предсказания (в Zee Hood возвращает 0)
 local function getPred(target)
-    if placeId == 99692075138533 then return 0 end
+    if not predictionEnabled then return 0 end
     local pingMs = currentPing
     local base = getgenv().BasePred + (pingMs * getgenv().PredPingFactor)
     if target and target.Character and LocalPlayer.Character then
@@ -316,7 +334,6 @@ local function getAimPos(plr)
     end
     pos = pos + Vector3.new(0, offsetY, 0)
     
-    -- Предсказание (в Zee Hood = 0)
     local predTime = getPred(plr)
     local tX = getgenv().PredX
     local tY = getgenv().PredY
@@ -344,7 +361,6 @@ local function hookTool(tool)
                 hitCount += 1
             end
         else
-            -- Если нет цели, просто стреляем (для Auto Shoot)
             tool:Activate()
         end
     end)
@@ -392,7 +408,7 @@ Instance.new("UICorner", dot).CornerRadius = UDim.new(0,4)
 RunService.Heartbeat:Connect(function()
     local lt = lockedTarget and lockedTarget.Name or "None"
     local slt = silentLockedTarget and silentLockedTarget.Name or "None"
-    lbl.Text = "Game: "..detectedGame.." | PRED: "..(getgenv().PredX == 0 and "OFF" or "ON").." | PING: "..currentPing.."ms\n"..
+    lbl.Text = "Game: "..detectedGame.." | PRED: "..(predictionEnabled and "ON" or "OFF").." | PING: "..currentPing.."ms\n"..
                "Silent: "..(silentAim and "ON (V)" or "OFF").."\n"..
                "Silent Lock: "..(silentLockEnabled and "ON (Q) ["..slt.."]" or "OFF").."\n"..
                "Camlock: "..(camlock and "ON (F) ["..lt.."]" or "OFF").."\n"..
@@ -460,6 +476,10 @@ UIS.InputBegan:Connect(function(input, gp)
     elseif k == getgenv().ComboKey then
         comboMode = not comboMode
         print("Combo Mode: "..(comboMode and "ВКЛ" or "ВЫКЛ"))
+    elseif k == getgenv().PredToggleKey then
+        predictionEnabled = not predictionEnabled
+        applyPredictionSettings()
+        print("Предсказание: " .. (predictionEnabled and "ВКЛЮЧЕНО" or "ОТКЛЮЧЕНО"))
     end
 end)
 
@@ -597,13 +617,13 @@ RunService.Heartbeat:Connect(function()
     end
 end)
 
-print("🚀 ULTRA v14 FINAL — Silent Aim для Zee Hood (prediction = 0)")
-print("Q — Silent Lock | J — Auto Shoot | N — Combo | F — Camlock | T — Trigger | B — Auto Air | V — Silent Aim | K — Blatant")
-if placeId == 99692075138533 then
+print("🚀 ULTRA v14 FINAL — С возможностью переключения предсказания (клавиша " .. getgenv().PredToggleKey .. ")")
+print("Q — Silent Lock | J — Auto Shoot | N — Combo | F — Camlock | T — Trigger | B — Auto Air | V — Silent Aim | K — Blatant | " .. getgenv().PredToggleKey .. " — переключить предсказание")
+if isZeeHood then
     if MainRemote then
         print("✅ Используется ремоут: " .. MainRemote.Name .. " с аргументом " .. tostring(ShootArg))
     else
         print("⚠️ Remote не найден, используется tool:Activate() (Silent Aim работать не будет)")
     end
-    print("🎯 Camlock работает без предсказания (0 prediction)")
+    print("🎯 По умолчанию предсказание ОТКЛЮЧЕНО (0 prediction). Нажмите P, чтобы включить, если нужно.")
 end
