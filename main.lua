@@ -1,12 +1,551 @@
-local v0=game:GetService("Players");local v1=game:GetService("TweenService");local v2=game:GetService("UserInputService");local v3=game:GetService("SoundService");local v4=game:GetService("Lighting");local v5=v0.LocalPlayer;local v6=v5:WaitForChild("PlayerGui");local v7=Instance.new("ScreenGui");v7.Name="REVELENCY_GUI";v7.ResetOnSpawn=false;v7.IgnoreGuiInset=true;v7.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;v7.Parent=v6;local v14=Instance.new("Sound");v14.SoundId="rbxassetid://6518811702";v14.Volume=872.55 -(826 + 46) ;v14.Parent=v3;local v18=Instance.new("Sound");v18.SoundId="rbxassetid://4964706015";v18.Volume=947.4 -(245 + 702) ;v18.Parent=v3;local v22=Instance.new("BlurEffect");v22.Size=0 -0 ;v22.Parent=v4;v1:Create(v22,TweenInfo.new(1.6,Enum.EasingStyle.Sine),{Size=15 + 29 }):Play();local v25=Instance.new("Frame");v25.Size=UDim2.new(1,1898 -(260 + 1638) ,1,440 -(382 + 58) );v25.BackgroundColor3=Color3.fromRGB(3,3 -2 ,9 + 1 );v25.BorderSizePixel=0 -0 ;v25.ZIndex=200;v25.Parent=v7;local v31=Instance.new("UIGradient");v31.Color=ColorSequence.new({ColorSequenceKeypoint.new(1205 -(902 + 303) ,Color3.fromRGB(0 -0 ,0 -0 ,0)),ColorSequenceKeypoint.new(0.28,Color3.fromRGB(1698 -(1121 + 569) ,217 -(22 + 192) ,707 -(483 + 200) )),ColorSequenceKeypoint.new(0.55 -0 ,Color3.fromRGB(6 -1 ,767 -(468 + 297) ,18)),ColorSequenceKeypoint.new(1,Color3.fromRGB(562 -(334 + 228) ,0,0 -0 ))});v31.Rotation=312 -177 ;v31.Parent=v25;for v378=1 -0 ,3 + 5  do local v379=Instance.new("Frame");v379.Size=UDim2.new(237 -(141 + 95) ,0 + 0 ,0 -0 ,2 -1 );v379.Position=UDim2.new(0,0 + 0 ,v378/9 ,0);v379.BackgroundColor3=Color3.fromRGB(109 -69 ,18,71 + 29 );v379.BackgroundTransparency=0.9 + 0 ;v379.BorderSizePixel=0;v379.ZIndex=281 -81 ;v379.Parent=v25;end for v387=1,12 do local v388=0 + 0 ;local v389;while true do if (v388==2) then v389.BackgroundTransparency=163.92 -(92 + 71) ;v389.BorderSizePixel=0 + 0 ;v388=4 -1 ;end if (v388==(765 -(574 + 191))) then v389=Instance.new("Frame");v389.Size=UDim2.new(0 + 0 ,2 -1 ,1 + 0 ,849 -(254 + 595) );v388=127 -(55 + 71) ;end if (v388==(3 -0)) then v389.ZIndex=200;v389.Parent=v25;break;end if (v388==(1791 -(573 + 1217))) then v389.Position=UDim2.new(v387/13 ,0 -0 ,0 + 0 ,0 -0 );v389.BackgroundColor3=Color3.fromRGB(979 -(714 + 225) ,52 -34 ,139 -39 );v388=1 + 1 ;end end end for v390=1,60 -18  do local v391=806 -(118 + 688) ;local v392;local v393;local v394;while true do if ((48 -(25 + 23))==v391) then v392=math.random(1 + 1 ,1893 -(927 + 959) );v393=Instance.new("Frame");v393.Size=UDim2.new(0 -0 ,v392,0,v392);v391=1;end if ((733 -(16 + 716))==v391) then v393.Position=UDim2.new(math.random(2,98)/100 ,0 -0 ,math.random(102 -(11 + 86) ,231 -136 )/(385 -(175 + 110)) ,0 -0 );v393.BackgroundColor3=Color3.fromRGB(math.random(246 -196 ,1926 -(503 + 1293) ),math.random(22 -14 ,45),math.random(155,185 + 70 ));v393.BackgroundTransparency=math.random(1099 -(810 + 251) ,53 + 22 )/100 ;v391=1 + 1 ;end if (3==v391) then v394=Instance.new("UICorner");v394.CornerRadius=UDim.new(1,0 + 0 );v394.Parent=v393;v391=4;end if (v391==(537 -(43 + 490))) then task.spawn(function() while v393 and v393.Parent  do local v896=733 -(711 + 22) ;while true do if (v896==(0 -0)) then v1:Create(v393,TweenInfo.new(math.random(864 -(240 + 619) ,4 + 9 ),Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,0,true),{Position=UDim2.new(math.clamp(v393.Position.X.Scale + (math.random( -(9 -3),1 + 5 )/(1844 -(1344 + 400))) ,0.01,405.99 -(255 + 150) ),0 + 0 ,math.clamp(v393.Position.Y.Scale-(math.random(4,16)/(54 + 46)) ,0.01 -0 ,0.99),0 -0 ),BackgroundTransparency=math.random(55,88)/(1839 -(404 + 1335)) }):Play();task.wait(math.random(5,13));break;end end end end);break;end if (v391==(408 -(183 + 223))) then v393.BorderSizePixel=0 -0 ;v393.ZIndex=134 + 67 ;v393.Parent=v25;v391=2 + 1 ;end end end local v35=577 -(10 + 327) ;local v36=v35/(2 + 0) ;local function v37(v395,v396,v397,v398,v399,v400,v401,v402,v403) local v404=338 -(118 + 220) ;local v405;while true do local v586=0 + 0 ;while true do if (v586==(450 -(108 + 341))) then if (v404==(0 + 0)) then v405=Instance.new("Frame");v405.Size=UDim2.new(0,v396,0 -0 ,v397);v404=1494 -(711 + 782) ;end if (v404==1) then v405.Position=UDim2.new(0,v398-(v396/(3 -1)) ,0,v399-(v397/(471 -(270 + 199))) );v405.BackgroundColor3=v401;v404=2;end v586=2;end if ((1 + 1)==v586) then if (v404==(1823 -(580 + 1239))) then v405.Parent=v395;return v405;end break;end if (v586==(0 -0)) then if (v404==(3 + 0)) then v405.Rotation=v400 or 0 ;v405.ZIndex=v403 or (8 + 195) ;v404=4;end if (v404==(1 + 1)) then v405.BackgroundTransparency=v402 or 0 ;v405.BorderSizePixel=0 -0 ;v404=2 + 1 ;end v586=1168 -(645 + 522) ;end end end end local v38={{sz=220,bars=8,col=Color3.fromRGB(75,35 + 0 ,195),thick=9 -7 ,spd=0.3},{sz=158,bars=17 -11 ,col=Color3.fromRGB(1941 -(1045 + 791) ,139 -84 ,363 -125 ),thick=507 -(351 + 154) ,spd= -0.52},{sz=364 -(28 + 238) ,bars=8 -4 ,col=Color3.fromRGB(148,1647 -(1381 + 178) ,255),thick=3 + 0 ,spd=0.82 + 0 }};local v39={};for v406,v407 in ipairs(v38) do local v408=Instance.new("Frame");v408.Size=UDim2.new(0 + 0 ,v35,0 -0 ,v35);v408.Position=UDim2.new(0.5 + 0 , -v36,470.5 -(381 + 89) , -v36-30 );v408.BackgroundTransparency=1 + 0 ;v408.BorderSizePixel=0 + 0 ;v408.ZIndex=345 -143 ;v408.Parent=v25;local v415=(1336 -(1074 + 82))/v407.bars ;for v587=0 -0 ,v407.bars-(1785 -(214 + 1570))  do v37(v408,v407.sz,v407.thick,v36,v36,v587 * v415 ,v407.col,1455 -(990 + 465) ,84 + 118 );end v39[v406]={root=v408,spd=v407.spd};end task.spawn(function() local v417={0 + 0 ,0 -0 ,1726 -(1668 + 58) };while v39[627 -(512 + 114) ] and v39[2 -1 ].root.Parent  do local v588=0 -0 ;while true do if (v588==0) then for v897,v898 in ipairs(v39) do local v899=0;while true do if (v899==(0 -0)) then v417[v897]=v417[v897] + v898.spd ;v898.root.Rotation=v417[v897];break;end end end task.wait(0.05 + 0 );break;end end end end);local v40=Instance.new("Frame");v40.Size=UDim2.new(0,v35,0 + 0 ,v35);v40.Position=UDim2.new(0.5 + 0 , -v36,0.5 -0 , -v36-30 );v40.BackgroundTransparency=1995 -(109 + 1885) ;v40.BorderSizePixel=1469 -(1269 + 200) ;v40.ZIndex=390 -186 ;v40.Parent=v25;local v47=Instance.new("Frame");v47.Size=UDim2.new(815 -(98 + 717) ,860 -(802 + 24) ,0,58 -24 );v47.Position=UDim2.new(0 -0 ,v36-(3 + 14) ,0 + 0 ,v36-(3 + 14) );v47.BackgroundColor3=Color3.fromRGB(24 + 84 ,58,709 -454 );v47.BorderSizePixel=0 -0 ;v47.Rotation=45;v47.ZIndex=205;v47.Parent=v40;v37(v40,29 + 51 ,1,v36,v36,0 + 0 ,Color3.fromRGB(78,38,162 + 34 ),0.4,149 + 55 );v37(v40,38 + 42 ,1434 -(797 + 636) ,v36,v36,436 -346 ,Color3.fromRGB(1697 -(1427 + 192) ,14 + 24 ,454 -258 ),0.4 + 0 ,204);v37(v40,80,1 + 0 ,v36,v36,371 -(192 + 134) ,Color3.fromRGB(98,1334 -(316 + 960) ,226),0.6 + 0 ,158 + 46 );v37(v40,80,1,v36,v36, -45,Color3.fromRGB(91 + 7 ,221 -163 ,777 -(83 + 468) ),0.6,204);task.spawn(function() while v47 and v47.Parent  do local v589=1806 -(1202 + 604) ;local v590;while true do if (v589==(0 -0)) then v590=0;while true do if (v590==0) then v1:Create(v47,TweenInfo.new(1.05 -0 ,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(531 -339 ,138,580 -(45 + 280) ),Size=UDim2.new(0,46,0 + 0 ,46),Position=UDim2.new(0 + 0 ,v36-(9 + 14) ,0,v36-(13 + 10) )}):Play();task.wait(1.05);v590=1;end if (v590==(1 + 0)) then v1:Create(v47,TweenInfo.new(1.05,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(88,69 -31 ,2129 -(340 + 1571) ),Size=UDim2.new(0 + 0 ,28,1772 -(1733 + 39) ,28),Position=UDim2.new(0,v36-(38 -24) ,1034 -(125 + 909) ,v36-14 )}):Play();task.wait(1949.05 -(1096 + 852) );break;end end break;end end end end);local v55={};for v418=1,2 + 2  do local v419=0;local v420;while true do if (v419==(0 -0)) then v420=Instance.new("Frame");v420.Size=UDim2.new(0 + 0 ,10,512 -(409 + 103) ,246 -(46 + 190) );v419=1;end if (v419==(98 -(51 + 44))) then v420.Parent=v40;v55[v418]=v420;break;end if (v419==(1 + 0)) then v420.BackgroundColor3=Color3.fromRGB(1472 -(1114 + 203) ,821 -(228 + 498) ,56 + 199 );v420.BorderSizePixel=0 + 0 ;v419=665 -(174 + 489) ;end if (v419==2) then v420.Rotation=117 -72 ;v420.ZIndex=2111 -(830 + 1075) ;v419=527 -(303 + 221) ;end end end task.spawn(function() local v421=0;local v422;while true do if (0==v421) then v422=1269 -(231 + 1038) ;while v40 and v40.Parent  do local v841=0 + 0 ;local v842;while true do if (v841==0) then v842=1162 -(171 + 991) ;while true do if (v842==0) then v422=v422 + 0.042 ;for v1015,v1016 in ipairs(v55) do local v1017=0 -0 ;local v1018;while true do if ((0 -0)==v1017) then v1018=v422 + (((v1015-1) * math.pi)/2) ;v1016.Position=UDim2.new(0,(v36 + (math.cos(v1018) * (159 -95))) -(5 + 0) ,0 -0 ,(v36 + (math.sin(v1018) * 64)) -(14 -9) );break;end end end v842=1 -0 ;end if (v842==(3 -2)) then task.wait(0.05);break;end end break;end end end break;end end end);task.spawn(function() while v25 and v25.Parent  do local v591=1248 -(111 + 1137) ;while true do if (v591==(158 -(91 + 67))) then for v900,v901 in ipairs({232 -154 ,623 -(423 + 100) ,122}) do local v902=0 -0 ;local v903;local v904;local v905;local v906;while true do if (v902==(1 + 0)) then v903.BorderSizePixel=771 -(326 + 445) ;v903.ZIndex=877 -676 ;v903.Parent=v25;v904=Instance.new("UICorner");v902=2;end if (0==v902) then v903=Instance.new("Frame");v903.Size=UDim2.new(0,v901 * 2 ,0,v901 * (4 -2) );v903.Position=UDim2.new(0.5 -0 , -v901,711.5 -(530 + 181) , -v901-(911 -(614 + 267)) );v903.BackgroundTransparency=33 -(19 + 13) ;v902=1 -0 ;end if (v902==(4 -2)) then v904.CornerRadius=UDim.new(2 -1 ,0 + 0 );v904.Parent=v903;v905=Instance.new("UIStroke");v905.Color=Color3.fromRGB(88,66 -28 ,198);v902=3;end if (v902==(7 -3)) then v1:Create(v903,TweenInfo.new(2.6,Enum.EasingStyle.Sine),{Size=UDim2.new(1812 -(1293 + 519) ,v906 * 2 ,0 -0 ,v906 * (4 -2) ),Position=UDim2.new(0.5 -0 , -v906,0.5, -v906-(129 -99) )}):Play();v1:Create(v905,TweenInfo.new(4.6 -2 ,Enum.EasingStyle.Sine),{Transparency=1}):Play();task.delay(2.7 + 0 ,function() if v903 then v903:Destroy();end end);break;end if (v902==3) then v905.Thickness=1 + 0 ;v905.Transparency=0.28 -0 ;v905.Parent=v903;v906=v901 + 14 + 44 ;v902=2 + 2 ;end end end task.wait(2.9);break;end end end end);local v56=Instance.new("TextLabel");v56.Size=UDim2.new(1 + 0 ,1096 -(709 + 387) ,0,1968 -(673 + 1185) );v56.Position=UDim2.new(0,0,0.635 -0 ,0 -0 );v56.BackgroundTransparency=1;v56.Text="";v56.TextColor3=Color3.fromRGB(378 -148 ,230,183 + 72 );v56.TextSize=62 + 20 ;v56.Font=Enum.Font.GothamBlack;v56.TextXAlignment=Enum.TextXAlignment.Center;v56.TextTransparency=0.82 -0 ;v56.ZIndex=50 + 153 ;v56.Parent=v25;local v70=Instance.new("TextLabel");v70.Size=UDim2.new(1 -0 ,0,0,215 -105 );v70.Position=UDim2.new(1880 -(446 + 1434) ,1283 -(1040 + 243) ,0.635 -0 ,1847 -(559 + 1288) );v70.BackgroundTransparency=1932 -(609 + 1322) ;v70.Text="";v70.TextColor3=Color3.fromRGB(709 -(13 + 441) ,952 -697 ,667 -412 );v70.TextSize=408 -326 ;v70.Font=Enum.Font.GothamBlack;v70.TextXAlignment=Enum.TextXAlignment.Center;v70.ZIndex=8 + 196 ;v70.Parent=v25;local v81=Instance.new("UIStroke");v81.Color=Color3.fromRGB(726 -526 ,200,79 + 141 );v81.Thickness=1.8 + 0 ;v81.Transparency=0.5;v81.Parent=v70;local v86=Instance.new("TextLabel");v86.Size=UDim2.new(0 -0 ,4 + 2 ,0 -0 ,51 + 25 );v86.Position=UDim2.new(0.5 + 0 ,8 + 2 ,0.64 + 0 ,13 + 0 );v86.BackgroundTransparency=434 -(153 + 280) ;v86.Text="|";v86.TextColor3=Color3.fromRGB(736 -481 ,229 + 26 ,255);v86.TextSize=23 + 33 ;v86.Font=Enum.Font.GothamBold;v86.TextXAlignment=Enum.TextXAlignment.Left;v86.ZIndex=108 + 97 ;v86.Parent=v25;task.spawn(function() while v86 and v86.Parent  do local v592=0 + 0 ;local v593;while true do if ((0 + 0)==v592) then v593=0;while true do if (v593==(1 -0)) then v86.TextTransparency=1 + 0 ;task.wait(667.42 -(89 + 578) );break;end if (v593==(0 + 0)) then v86.TextTransparency=0;task.wait(0.5);v593=1 -0 ;end end break;end end end end);local v99=Instance.new("TextLabel");v99.Size=UDim2.new(1050 -(572 + 477) ,0,0 + 0 ,14 + 8 );v99.Position=UDim2.new(0 + 0 ,86 -(84 + 2) ,0.773,0);v99.BackgroundTransparency=1 -0 ;v99.Text="❮  BETA VERSION  ❯";v99.TextColor3=Color3.fromRGB(145 + 55 ,1042 -(497 + 345) ,6 + 212 );v99.TextSize=3 + 11 ;v99.Font=Enum.Font.GothamBold;v99.TextXAlignment=Enum.TextXAlignment.Center;v99.TextTransparency=1334 -(605 + 728) ;v99.ZIndex=204;v99.Parent=v25;local v111=Instance.new("Frame");v111.Size=UDim2.new(0 + 0 ,1248 -686 ,0,1 + 6 );v111.Position=UDim2.new(0.5, -281,0.852 -0 ,0 + 0 );v111.BackgroundColor3=Color3.fromRGB(13,19 -12 ,23 + 7 );v111.BorderSizePixel=0;v111.ZIndex=692 -(457 + 32) ;v111.Parent=v25;local v118=Instance.new("UICorner");v118.CornerRadius=UDim.new(1,0 + 0 );v118.Parent=v111;local v121=Instance.new("UIStroke");v121.Color=Color3.fromRGB(1460 -(832 + 570) ,17 + 1 ,36 + 102 );v121.Thickness=1;v121.Transparency=0.42;v121.Parent=v111;local v126=Instance.new("Frame");v126.Size=UDim2.new(0 -0 ,0 + 0 ,797 -(588 + 208) ,0 -0 );v126.BackgroundColor3=Color3.fromRGB(1888 -(884 + 916) ,38,456 -238 );v126.BorderSizePixel=0 + 0 ;v126.ZIndex=857 -(232 + 421) ;v126.Parent=v111;local v132=Instance.new("UICorner");v132.CornerRadius=UDim.new(1890 -(1569 + 320) ,0 + 0 );v132.Parent=v126;local v135=Instance.new("UIGradient");v135.Color=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(161 -113 ,14,770 -(316 + 289) )),ColorSequenceKeypoint.new(0.5 + 0 ,Color3.fromRGB(98,42,1685 -(666 + 787) )),ColorSequenceKeypoint.new(1 + 0 ,Color3.fromRGB(198,392 -(79 + 175) ,402 -147 ))});v135.Parent=v126;local v138=Instance.new("Frame");v138.Size=UDim2.new(0.24,0 + 0 ,2 -1 ,0 -0 );v138.Position=UDim2.new( -(899.3 -(503 + 396)),181 -(92 + 89) ,0,0 -0 );v138.BackgroundColor3=Color3.fromRGB(131 + 124 ,255,151 + 104 );v138.BackgroundTransparency=0.78;v138.BorderSizePixel=0 -0 ;v138.ZIndex=205;v138.Parent=v126;local v146=Instance.new("UICorner");v146.CornerRadius=UDim.new(1 + 0 ,0 -0 );v146.Parent=v138;local v149=Instance.new("UIGradient");v149.Transparency=NumberSequence.new({NumberSequenceKeypoint.new(0 + 0 ,2 -1 ),NumberSequenceKeypoint.new(0.5 -0 ,0.65),NumberSequenceKeypoint.new(1245 -(485 + 759) ,1)});v149.Parent=v138;task.spawn(function() while v138 and v138.Parent  do local v594=0;local v595;while true do if ((0 -0)==v594) then v595=1189 -(442 + 747) ;while true do if (0==v595) then v138.Position=UDim2.new( -(1135.3 -(832 + 303)),946 -(88 + 858) ,0 + 0 ,0);v1:Create(v138,TweenInfo.new(2.2 + 0 ,Enum.EasingStyle.Sine),{Position=UDim2.new(1.1 + 0 ,789 -(766 + 23) ,0 -0 ,0 -0 )}):Play();v595=1;end if ((2 -1)==v595) then task.wait(6.9 -4 );break;end end break;end end end end);local v152=Instance.new("Frame");v152.Size=UDim2.new(0,1088 -(1036 + 37) ,0,15);v152.Position=UDim2.new(1 + 0 , -(15 -7),0.5, -(7 + 1));v152.BackgroundColor3=Color3.fromRGB(1680 -(641 + 839) ,1061 -(910 + 3) ,650 -395 );v152.BorderSizePixel=1684 -(1466 + 218) ;v152.ZIndex=95 + 111 ;v152.Parent=v126;local v159=Instance.new("UICorner");v159.CornerRadius=UDim.new(1149 -(556 + 592) ,0 + 0 );v159.Parent=v152;task.spawn(function() while v152 and v152.Parent  do v1:Create(v152,TweenInfo.new(0.82,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(1046 -(329 + 479) ,1049 -(174 + 680) ,255)}):Play();task.wait(0.82 -0 );v1:Create(v152,TweenInfo.new(0.82,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(223 -115 ,35 + 13 ,967 -(396 + 343) )}):Play();task.wait(0.82 + 0 );end end);local v162=Instance.new("TextLabel");v162.Size=UDim2.new(1478 -(29 + 1448) ,1389 -(135 + 1254) ,0 -0 ,130 -102 );v162.Position=UDim2.new(0 + 0 ,0,1527.876 -(389 + 1138) ,0);v162.BackgroundTransparency=575 -(102 + 472) ;v162.Text="0%";v162.TextColor3=Color3.fromRGB(241 + 14 ,142 + 113 ,255);v162.TextSize=21;v162.Font=Enum.Font.GothamBold;v162.TextXAlignment=Enum.TextXAlignment.Center;v162.ZIndex=190 + 13 ;v162.Parent=v25;local v173=Instance.new("TextLabel");v173.Size=UDim2.new(1545.68 -(320 + 1225) ,0,0 -0 ,14 + 8 );v173.Position=UDim2.new(1464.16 -(157 + 1307) ,0,1859.916 -(821 + 1038) ,0 -0 );v173.BackgroundTransparency=1 + 0 ;v173.Text="Initializing REVELENCY...";v173.TextColor3=Color3.fromRGB(284 -124 ,160,180);v173.TextSize=5 + 8 ;v173.Font=Enum.Font.Gotham;v173.TextXAlignment=Enum.TextXAlignment.Center;v173.ZIndex=503 -300 ;v173.Parent=v25;local v185=Instance.new("TextLabel");v185.Size=UDim2.new(1026 -(834 + 192) ,30,0,2 + 20 );v185.Position=UDim2.new(0.84,0 + 0 ,0.916 + 0 ,0 -0 );v185.BackgroundTransparency=305 -(300 + 4) ;v185.Text=".";v185.TextColor3=Color3.fromRGB(57 + 153 ,549 -339 ,590 -(112 + 250) );v185.TextSize=6 + 8 ;v185.Font=Enum.Font.GothamBold;v185.ZIndex=203;v185.Parent=v25;task.spawn(function() local v423=0;local v424;local v425;while true do if (v423==(2 -1)) then while v185 and v185.Parent  do local v843=0;while true do if (v843==(1 + 0)) then task.wait(0.44 + 0 );break;end if (v843==(0 + 0)) then v185.Text=v424[v425];v425=(v425%3) + 1 ;v843=1;end end end break;end if (v423==(0 + 0)) then v424={".","..","..."};v425=2 -1 ;v423=1;end end end);local v195=Instance.new("TextLabel");v195.Size=UDim2.new(1,0,0,18);v195.Position=UDim2.new(882 -(244 + 638) ,693 -(627 + 66) ,0.955,0 -0 );v195.BackgroundTransparency=1;v195.Text="REVELENCY  ·  2025  ·  BETA  ·  v1.0";v195.TextColor3=Color3.fromRGB(80,682 -(512 + 90) ,100);v195.TextSize=1917 -(1665 + 241) ;v195.Font=Enum.Font.Gotham;v195.TextXAlignment=Enum.TextXAlignment.Center;v195.ZIndex=920 -(373 + 344) ;v195.Parent=v25;local v206={[3 + 2 ]="Connecting to remote server...",[4 + 11 ]="Verifying license key...",[71 -44 ]="Loading core modules...",[65 -26 ]="Patching memory hooks...",[51]="Bypassing anti-cheat layer...",[1162 -(35 + 1064) ]="Injecting aimbot engine...",[54 + 20 ]="Applying visual patches...",[179 -95 ]="Loading user configuration...",[1 + 92 ]="Finalizing startup...",[99]="Almost ready...",[1336 -(298 + 938) ]="Welcome to REVELENCY!"};local v207,v208=1979 -(233 + 1026) ,2366 -(636 + 1030) ;local v209=Instance.new("Frame");v209.Name="Menu";v209.Size=UDim2.new(0,v207,0 + 0 ,v208);v209.Position=UDim2.new(0.5 + 0 , -v207/(1 + 1) ,0.5 + 0 , -v208/(223 -(55 + 166)) );v209.BackgroundColor3=Color3.fromRGB(5,1 + 3 ,11);v209.BackgroundTransparency=0;v209.BorderSizePixel=0 + 0 ;v209.Visible=false;v209.ZIndex=10;v209.Parent=v7;v209.ClipsDescendants=true;local v220=Instance.new("UIGradient");v220.Color=ColorSequence.new({ColorSequenceKeypoint.new(297 -(36 + 261) ,Color3.fromRGB(17 -7 ,8,1390 -(34 + 1334) )),ColorSequenceKeypoint.new(0.5,Color3.fromRGB(2 + 3 ,4 + 0 ,12)),ColorSequenceKeypoint.new(22 -(20 + 1) ,Color3.fromRGB(2 + 0 ,321 -(134 + 185) ,1139 -(549 + 584) ))});v220.Rotation=145;v220.Parent=v209;local v224=Instance.new("UIStroke");v224.Color=Color3.fromRGB(685 -(314 + 371) ,384 -272 ,1223 -(478 + 490) );v224.Thickness=1.8 + 0 ;v224.Parent=v209;task.spawn(function() while v224 and v224.Parent  do local v596=1172 -(786 + 386) ;local v597;while true do if (v596==(0 -0)) then v597=1379 -(1055 + 324) ;while true do if (v597==(1340 -(1093 + 247))) then v1:Create(v224,TweenInfo.new(2.3 + 0 ,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Color=Color3.fromRGB(9 + 69 ,150 -112 ,198)}):Play();task.wait(6.3 -4 );v597=2 -1 ;end if (v597==(2 -1)) then v1:Create(v224,TweenInfo.new(1.2999999999999998 + 1 ,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Color=Color3.fromRGB(0 -0 ,448 -318 ,193 + 62 )}):Play();task.wait(2.3);break;end end break;end end end end);local v228=71 -43 ;local function v229(v426,v427,v428) local v429=688 -(364 + 324) ;local v430;local v431;local v432;local v433;local v434;local v435;while true do if (v429==(10 -6)) then v434=Instance.new("Frame");v434.Size=UDim2.new(0 -0 ,7,0 + 0 ,29 -22 );v434.Position=UDim2.new(v427,v430 + (((v427==(0 -0)) and (0 -0)) or (v228-(1275 -(1249 + 19)))) ,v428,v431 + (((v428==(0 + 0)) and (0 -0)) or (v228-7)) );v434.BackgroundColor3=Color3.fromRGB(118,202,1341 -(686 + 400) );v429=4 + 1 ;end if ((229 -(73 + 156))==v429) then local v639=0 + 0 ;while true do if (v639==(813 -(721 + 90))) then v429=1;break;end if (v639==0) then v430=((v427==(0 + 0)) and 0) or  -v228 ;v431=((v428==(0 -0)) and 0) or  -v228 ;v639=471 -(224 + 246) ;end if (v639==1) then v432=Instance.new("Frame");v432.Size=UDim2.new(0 -0 ,v228,0 -0 ,1 + 1 );v639=2;end end end if (v429==2) then v432.Parent=v426;v433=Instance.new("Frame");v433.Size=UDim2.new(0,1 + 1 ,0 + 0 ,v228);v433.Position=UDim2.new(v427,v430,v428,v431);v429=5 -2 ;end if (v429==(16 -11)) then v434.BorderSizePixel=513 -(203 + 310) ;v434.ZIndex=2009 -(1238 + 755) ;v434.Parent=v426;v435=Instance.new("UICorner");v429=1 + 5 ;end if (v429==(1537 -(709 + 825))) then v433.BackgroundColor3=Color3.fromRGB(0,142,469 -214 );v433.BorderSizePixel=0;v433.ZIndex=21 -6 ;v433.Parent=v426;v429=868 -(196 + 668) ;end if (v429==(3 -2)) then v432.Position=UDim2.new(v427,v430,v428,v431);v432.BackgroundColor3=Color3.fromRGB(0,293 -151 ,1088 -(171 + 662) );v432.BorderSizePixel=93 -(4 + 89) ;v432.ZIndex=52 -37 ;v429=2;end if ((3 + 3)==v429) then v435.CornerRadius=UDim.new(1,0 -0 );v435.Parent=v434;task.spawn(function() while v434 and v434.Parent  do local v907=0;while true do if ((1 + 0)==v907) then v1:Create(v434,TweenInfo.new(1487.7 -(35 + 1451) ,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(58,1601 -(28 + 1425) ,255),Size=UDim2.new(1993 -(941 + 1052) ,5,0 + 0 ,1519 -(822 + 692) )}):Play();task.wait(1.7 -0 );break;end if ((0 + 0)==v907) then v1:Create(v434,TweenInfo.new(298.7 -(45 + 252) ,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(220 + 2 ,84 + 158 ,620 -365 ),Size=UDim2.new(0,442 -(114 + 319) ,0 -0 ,10 -1 )}):Play();task.wait(1.7);v907=1;end end end end);task.spawn(function() while v432 and v432.Parent  do local v908=0;while true do if (v908==1) then task.wait(2.3 + 0 );v1:Create(v432,TweenInfo.new(2.3,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(0,210 -68 ,255)}):Play();v908=3 -1 ;end if (v908==(1963 -(556 + 1407))) then v1:Create(v432,TweenInfo.new(1208.3 -(741 + 465) ,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(543 -(170 + 295) ,21 + 17 ,192 + 16 )}):Play();v1:Create(v433,TweenInfo.new(4.3 -2 ,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(78,32 + 6 ,208)}):Play();v908=1 + 0 ;end if (v908==(2 + 0)) then v1:Create(v433,TweenInfo.new(1232.3 -(957 + 273) ,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{BackgroundColor3=Color3.fromRGB(0 + 0 ,57 + 85 ,971 -716 )}):Play();task.wait(5.3 -3 );break;end end end end);break;end end end v229(v209,0 -0 ,0);v229(v209,4 -3 ,1780 -(389 + 1391) );v229(v209,0 + 0 ,1 + 0 );v229(v209,2 -1 ,1);local v230=Instance.new("Frame");v230.Size=UDim2.new(952 -(783 + 168) ,0 -0 ,0 + 0 ,347 -(309 + 2) );v230.BackgroundColor3=Color3.fromRGB(4,3,10);v230.BorderSizePixel=0 -0 ;v230.ZIndex=1223 -(1090 + 122) ;v230.Parent=v209;local v236=Instance.new("UIGradient");v236.Color=ColorSequence.new({ColorSequenceKeypoint.new(0 -0 ,Color3.fromRGB(0,48,95 + 43 )),ColorSequenceKeypoint.new(0.4 + 0 ,Color3.fromRGB(9 -5 ,13 -10 ,14)),ColorSequenceKeypoint.new(1 -0 ,Color3.fromRGB(11 -7 ,3,14))});v236.Parent=v230;local v239=Instance.new("Frame");v239.Size=UDim2.new(1 + 0 ,0 + 0 ,1695 -(556 + 1139) ,1);v239.Position=UDim2.new(0,15 -(6 + 9) ,1, -(1 + 0));v239.BackgroundColor3=Color3.fromRGB(0,100,128 + 120 );v239.BorderSizePixel=169 -(28 + 141) ;v239.ZIndex=5 + 7 ;v239.Parent=v230;local v246=Instance.new("Frame");v246.Size=UDim2.new(0.18,0,1,0 -0 );v246.Position=UDim2.new( -(0.22 + 0),1317 -(486 + 831) ,0 -0 ,0 -0 );v246.BackgroundColor3=Color3.fromRGB(200,44 + 184 ,806 -551 );v246.BackgroundTransparency=1263.44 -(668 + 595) ;v246.BorderSizePixel=0 + 0 ;v246.ZIndex=13;v246.Parent=v239;local v254=Instance.new("UIGradient");v254.Transparency=NumberSequence.new({NumberSequenceKeypoint.new(0 -0 ,291 -(23 + 267) ),NumberSequenceKeypoint.new(1944.5 -(1129 + 815) ,387.22 -(371 + 16) ),NumberSequenceKeypoint.new(1751 -(1326 + 424) ,1 -0 )});v254.Parent=v246;task.spawn(function() while v246 and v246.Parent  do v246.Position=UDim2.new( -(0.22 -0),118 -(88 + 30) ,771 -(720 + 51) ,0 -0 );v1:Create(v246,TweenInfo.new(1779 -(421 + 1355) ,Enum.EasingStyle.Sine),{Position=UDim2.new(1.05 -0 ,0,0 + 0 ,0)}):Play();task.wait(4.2);end end);local v257=Instance.new("Frame");v257.Size=UDim2.new(0,3,0.6,1083 -(286 + 797) );v257.Position=UDim2.new(0 -0 ,16 -6 ,439.2 -(397 + 42) ,0 + 0 );v257.BackgroundColor3=Color3.fromRGB(0,148,255);v257.BorderSizePixel=800 -(24 + 776) ;v257.ZIndex=12;v257.Parent=v230;local v264=Instance.new("UICorner");v264.CornerRadius=UDim.new(1 -0 ,785 -(222 + 563) );v264.Parent=v257;local v267=Instance.new("Frame");v267.Size=UDim2.new(0 -0 ,8,0 + 0 ,8);v267.Position=UDim2.new(190 -(23 + 167) ,22,0.5, -(1802 -(690 + 1108)));v267.BackgroundColor3=Color3.fromRGB(0,168,93 + 162 );v267.BorderSizePixel=0 + 0 ;v267.Rotation=893 -(40 + 808) ;v267.ZIndex=12;v267.Parent=v230;local v275=Instance.new("TextLabel");v275.Size=UDim2.new(1 + 0 , -(191 -141),1,0);v275.Position=UDim2.new(0 + 0 ,21 + 17 ,0 + 0 ,571 -(47 + 524) );v275.BackgroundTransparency=1 + 0 ;v275.Text="REVELENCY  [BETA VERSION]";v275.TextColor3=Color3.fromRGB(615 -390 ,230,370 -122 );v275.TextSize=13;v275.Font=Enum.Font.GothamBold;v275.TextXAlignment=Enum.TextXAlignment.Left;v275.ZIndex=27 -15 ;v275.Parent=v230;local v286=Instance.new("Frame");v286.Size=UDim2.new(1,0,1726 -(1165 + 561) ,32);v286.Position=UDim2.new(0,0 + 0 ,0,111 -75 );v286.BackgroundColor3=Color3.fromRGB(4,3,4 + 5 );v286.BorderSizePixel=479 -(341 + 138) ;v286.ZIndex=11;v286.Parent=v209;local v293=Instance.new("Frame");v293.Size=UDim2.new(1,0 + 0 ,0 -0 ,1);v293.Position=UDim2.new(0,0,1, -(327 -(89 + 237)));v293.BackgroundColor3=Color3.fromRGB(0,80,659 -454 );v293.BorderSizePixel=0 -0 ;v293.ZIndex=12;v293.Parent=v286;local v300=Instance.new("Frame");v300.Size=UDim2.new(1,0,882 -(581 + 300) , -(1288 -(855 + 365)));v300.Position=UDim2.new(0 -0 ,0 + 0 ,0,68);v300.BackgroundTransparency=1;v300.ZIndex=1246 -(1030 + 205) ;v300.Parent=v209;v300.ClipsDescendants=true;local function v307(v436) local v437=0;local v438;local v439;local v440;local v441;local v442;local v443;while true do if (v437==0) then v438=Instance.new("Frame");v438.Size=UDim2.new(1 + 0 ,0 + 0 ,287 -(156 + 130) ,0 -0 );v438.BackgroundTransparency=1 -0 ;v438.ZIndex=12;v437=1 -0 ;end if (v437==(3 + 8)) then v443.BackgroundColor3=Color3.fromRGB(0 + 0 ,110,324 -(10 + 59) );v443.BorderSizePixel=0 + 0 ;v443.ZIndex=13;v443.Parent=v438;v437=59 -47 ;end if (v437==1) then v438.Parent=v436;v439=Instance.new("Frame");v439.Size=UDim2.new(1163 -(671 + 492) ,42 + 10 ,0,1267 -(369 + 846) );v439.Position=UDim2.new(0.5, -(7 + 19),0.38 + 0 ,1945 -(1036 + 909) );v437=2;end if (v437==7) then v441.ZIndex=11 + 2 ;v441.Parent=v438;v442=Instance.new("TextLabel");v442.Size=UDim2.new(0.65 -0 ,203 -(11 + 192) ,0 + 0 ,197 -(135 + 40) );v437=8;end if (v437==(28 -16)) then task.spawn(function() task.wait(0.3 + 0 );v1:Create(v443,TweenInfo.new(0.8 -0 ,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Size=UDim2.new(0.6,0 -0 ,176 -(50 + 126) ,2)}):Play();end);return v438;end if (v437==(16 -10)) then v441.TextColor3=Color3.fromRGB(200,210,54 + 186 );v441.TextSize=22;v441.Font=Enum.Font.GothamBlack;v441.TextXAlignment=Enum.TextXAlignment.Center;v437=1420 -(1233 + 180) ;end if (2==v437) then v439.BackgroundColor3=Color3.fromRGB(969 -(522 + 447) ,1511 -(107 + 1314) ,93 + 107 );v439.BackgroundTransparency=0.55 -0 ;v439.BorderSizePixel=0 + 0 ;v439.Rotation=89 -44 ;v437=3;end if (v437==(35 -26)) then v442.TextSize=1923 -(716 + 1194) ;v442.Font=Enum.Font.Gotham;v442.TextXAlignment=Enum.TextXAlignment.Center;v442.ZIndex=1 + 12 ;v437=10;end if (v437==(1 + 4)) then v441.Size=UDim2.new(503.6 -(74 + 429) ,0 -0 ,0 + 0 ,82 -46 );v441.Position=UDim2.new(0.2,0 + 0 ,0.52 -0 ,0);v441.BackgroundTransparency=1;v441.Text="COMING SOON";v437=14 -8 ;end if (v437==(443 -(279 + 154))) then v442.Parent=v438;v443=Instance.new("Frame");v443.Size=UDim2.new(778 -(454 + 324) ,0 + 0 ,17 -(12 + 5) ,2 + 0 );v443.Position=UDim2.new(0.2 -0 ,0 + 0 ,1093.695 -(277 + 816) ,0 -0 );v437=11;end if (v437==(1191 -(1058 + 125))) then v442.Position=UDim2.new(0.175 + 0 ,0,975.62 -(815 + 160) ,0 -0 );v442.BackgroundTransparency=2 -1 ;v442.Text="This section is under development";v442.TextColor3=Color3.fromRGB(80,86,28 + 87 );v437=26 -17 ;end if (v437==4) then v440.Thickness=1.5;v440.Transparency=0.2;v440.Parent=v439;v441=Instance.new("TextLabel");v437=1903 -(41 + 1857) ;end if ((1896 -(1222 + 671))==v437) then v439.ZIndex=33 -20 ;v439.Parent=v438;v440=Instance.new("UIStroke");v440.Color=Color3.fromRGB(0,201 -61 ,1437 -(229 + 953) );v437=4;end end end local v308=Instance.new("Frame");v308.Size=UDim2.new(1775 -(1111 + 663) ,1579 -(874 + 705) ,1 + 0 ,0 + 0 );v308.BackgroundTransparency=1 -0 ;v308.ZIndex=1 + 11 ;v308.Parent=v300;local v313=Instance.new("Frame");v313.Size=UDim2.new(0,1029 -(642 + 37) ,1,0);v313.BackgroundTransparency=1 + 0 ;v313.ZIndex=2 + 10 ;v313.Parent=v308;local v318=Instance.new("Frame");v318.Size=UDim2.new(0,1,0.96,0 -0 );v318.Position=UDim2.new(0,804 -(233 + 221) ,0.02 -0 ,0 + 0 );v318.BackgroundColor3=Color3.fromRGB(0,88,1756 -(718 + 823) );v318.BackgroundTransparency=0.42 + 0 ;v318.BorderSizePixel=805 -(266 + 539) ;v318.ZIndex=31 -20 ;v318.Parent=v308;local v326=Instance.new("Frame");v326.Size=UDim2.new(1225 -(636 + 589) ,863 -499 ,1 -0 ,0 + 0 );v326.Position=UDim2.new(0 + 0 ,354,0,1015 -(657 + 358) );v326.BackgroundTransparency=2 -1 ;v326.ZIndex=12;v326.Parent=v308;local function v332(v444,v445,v446) local v447=0 -0 ;local v448;local v449;local v450;local v451;while true do if (v447==2) then v449=Instance.new("TextLabel");v449.Size=UDim2.new(1, -30,1187 -(1151 + 36) ,19 + 0 );v449.Position=UDim2.new(0 + 0 ,26,0,v446);v449.BackgroundTransparency=1;v447=8 -5 ;end if (v447==(1839 -(1552 + 280))) then v451.Parent=v450;break;end if (v447==4) then v449.TextXAlignment=Enum.TextXAlignment.Left;v449.ZIndex=847 -(64 + 770) ;v449.Parent=v444;v450=Instance.new("Frame");v447=5;end if (v447==(4 + 1)) then v450.Size=UDim2.new(2 -1 , -(4 + 16),1243 -(157 + 1086) ,1);v450.Position=UDim2.new(0 -0 ,52 -40 ,0,v446 + 21 );v450.BackgroundColor3=Color3.fromRGB(0,153 -53 ,306 -81 );v450.BorderSizePixel=0;v447=825 -(599 + 220) ;end if (v447==6) then v450.ZIndex=25 -12 ;v450.Parent=v444;v451=Instance.new("UIGradient");v451.Color=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(0,90 + 32 ,1472 -(841 + 376) )),ColorSequenceKeypoint.new(0.55 -0 ,Color3.fromRGB(0,74,174)),ColorSequenceKeypoint.new(2 -1 ,Color3.fromRGB(859 -(464 + 395) ,0,0 -0 ))});v447=7;end if (v447==(0 + 0)) then v448=Instance.new("Frame");v448.Size=UDim2.new(837 -(467 + 370) ,14 -7 ,0 + 0 ,23 -16 );v448.Position=UDim2.new(0,12,0,v446 + 1 + 5 );v448.BackgroundColor3=Color3.fromRGB(0 -0 ,650 -(150 + 370) ,1537 -(74 + 1208) );v447=2 -1 ;end if (v447==(14 -11)) then v449.Text=v445;v449.TextColor3=Color3.fromRGB(157 + 63 ,615 -(14 + 376) ,429 -181 );v449.TextSize=13;v449.Font=Enum.Font.GothamBold;v447=4;end if (v447==(1 + 0)) then v448.BorderSizePixel=0;v448.Rotation=40 + 5 ;v448.ZIndex=13 + 0 ;v448.Parent=v444;v447=5 -3 ;end end end local function v333(v452,v453,v454,v455) local v456=0 + 0 ;local v457;while true do if (v456==(80 -(23 + 55))) then v457.TextSize=25 -14 ;v457.Font=Enum.Font.Gotham;v457.TextXAlignment=Enum.TextXAlignment.Left;v456=3 + 0 ;end if (v456==(1 + 0)) then local v734=0 -0 ;while true do if ((1 + 0)==v734) then v457.TextColor3=v455 or Color3.fromRGB(118,1025 -(652 + 249) ,148) ;v456=5 -3 ;break;end if (v734==0) then v457.BackgroundTransparency=1;v457.Text=v453;v734=1869 -(708 + 1160) ;end end end if (0==v456) then local v735=0 -0 ;while true do if (v735==0) then v457=Instance.new("TextLabel");v457.Size=UDim2.new(1 -0 , -(47 -(10 + 17)),0 + 0 ,1748 -(1400 + 332) );v735=1 -0 ;end if (v735==(1909 -(242 + 1666))) then v457.Position=UDim2.new(0 + 0 ,6 + 8 ,0 + 0 ,v454);v456=1;break;end end end if (v456==3) then v457.ZIndex=953 -(850 + 90) ;v457.Parent=v452;break;end end end local function v334(v458,v459,v460,v461) local v462=0 -0 ;local v463;local v464;local v465;local v466;local v467;local v468;local v469;local v470;local v471;while true do if ((1395 -(360 + 1030))==v462) then v468.BackgroundTransparency=(v463.on and 0.08) or (1 + 0) ;v468.BorderSizePixel=0 -0 ;v468.ZIndex=20 -5 ;v468.Parent=v465;v469=Instance.new("UICorner");v462=1667 -(909 + 752) ;end if (v462==(1233 -(109 + 1114))) then v471.MouseLeave:Connect(function() if  not v463.on then v470.TextColor3=Color3.fromRGB(238 -108 ,135,62 + 96 );end end);v471.MouseButton1Click:Connect(function() local v844=242 -(6 + 236) ;local v845;local v846;local v847;local v848;while true do if (v844==3) then v1:Create(v467,TweenInfo.new(0.18,Enum.EasingStyle.Sine),{Color=v846}):Play();v1:Create(v468,TweenInfo.new(0.18 + 0 ,Enum.EasingStyle.Sine),{BackgroundTransparency=v847}):Play();v844=4 + 0 ;end if (v844==4) then v1:Create(v470,TweenInfo.new(0.18 -0 ,Enum.EasingStyle.Sine),{TextColor3=v848}):Play();break;end if (v844==(3 -1)) then v848=(v463.on and Color3.fromRGB(1333 -(1076 + 57) ,35 + 177 ,238)) or Color3.fromRGB(819 -(579 + 110) ,11 + 124 ,140 + 18 ) ;v1:Create(v465,TweenInfo.new(0.18,Enum.EasingStyle.Sine),{BackgroundColor3=v845}):Play();v844=2 + 1 ;end if (v844==(407 -(174 + 233))) then v463.on= not v463.on;v845=(v463.on and Color3.fromRGB(0 -0 ,196 -84 ,255)) or Color3.fromRGB(5 + 5 ,1183 -(663 + 511) ,18 + 2 ) ;v844=1;end if (v844==1) then local v958=0 + 0 ;while true do if (v958==(2 -1)) then v844=2;break;end if (v958==(0 + 0)) then v846=(v463.on and Color3.fromRGB(60,165,255)) or Color3.fromRGB(42,117 -67 ,92) ;v847=(v463.on and (0.08 -0)) or 1 ;v958=1;end end end end end);break;end if ((4 + 3)==v462) then local v742=0 -0 ;while true do if (1==v742) then v470.TextColor3=(v463.on and Color3.fromRGB(200,212,238)) or Color3.fromRGB(93 + 37 ,13 + 122 ,880 -(478 + 244) ) ;v470.TextSize=528 -(440 + 77) ;v742=1 + 1 ;end if (v742==2) then v470.Font=Enum.Font.Gotham;v462=8;break;end if (v742==0) then v470.BackgroundTransparency=3 -2 ;v470.Text=v459;v742=1557 -(655 + 901) ;end end end if (v462==(0 + 0)) then local v743=0;while true do if (v743==(0 + 0)) then v463={on=v461};v464=Instance.new("Frame");v743=1 + 0 ;end if (v743==(7 -5)) then v464.BackgroundTransparency=1;v462=1446 -(695 + 750) ;break;end if (v743==(3 -2)) then v464.Size=UDim2.new(1 -0 , -20,0 -0 ,371 -(285 + 66) );v464.Position=UDim2.new(0,32 -18 ,0,v460);v743=1312 -(682 + 628) ;end end end if (v462==3) then v466.CornerRadius=UDim.new(0 + 0 ,301 -(176 + 123) );v466.Parent=v465;v467=Instance.new("UIStroke");v467.Color=(v463.on and Color3.fromRGB(26 + 34 ,120 + 45 ,524 -(239 + 30) )) or Color3.fromRGB(42,50,26 + 66 ) ;v467.Thickness=1 + 0 ;v462=4;end if (v462==(1 -0)) then v464.ZIndex=40 -27 ;v464.Parent=v458;v465=Instance.new("Frame");v465.Size=UDim2.new(315 -(306 + 9) ,45 -32 ,0 + 0 ,8 + 5 );v465.Position=UDim2.new(0,0,0.5 + 0 , -(19 -12));v462=2;end if (v462==(1377 -(1140 + 235))) then v465.BackgroundColor3=(v463.on and Color3.fromRGB(0,72 + 40 ,234 + 21 )) or Color3.fromRGB(3 + 7 ,61 -(33 + 19) ,8 + 12 ) ;v465.BorderSizePixel=0 -0 ;v465.ZIndex=14;v465.Parent=v464;v466=Instance.new("UICorner");v462=2 + 1 ;end if ((7 -3)==v462) then local v756=0 + 0 ;while true do if (v756==(689 -(586 + 103))) then v467.Parent=v465;v468=Instance.new("Frame");v756=1;end if (v756==2) then v468.BackgroundColor3=Color3.fromRGB(175,220,24 + 231 );v462=5;break;end if (v756==1) then v468.Size=UDim2.new(0.56 -0 ,1488 -(1309 + 179) ,0.56 -0 ,0 + 0 );v468.Position=UDim2.new(0.22,0 -0 ,0.22 + 0 ,0 -0 );v756=3 -1 ;end end end if (v462==(618 -(295 + 314))) then v471.BackgroundTransparency=1;v471.Text="";v471.ZIndex=39 -23 ;v471.Parent=v464;v471.MouseEnter:Connect(function() if  not v463.on then v470.TextColor3=Color3.fromRGB(2130 -(1300 + 662) ,546 -372 ,198);end end);v462=1765 -(1178 + 577) ;end if (v462==8) then local v761=0 + 0 ;while true do if (v761==(2 -1)) then v470.Parent=v464;v471=Instance.new("TextButton");v761=1407 -(851 + 554) ;end if (v761==2) then v471.Size=UDim2.new(1 + 0 ,0 -0 ,1 -0 ,302 -(115 + 187) );v462=7 + 2 ;break;end if (v761==(0 + 0)) then v470.TextXAlignment=Enum.TextXAlignment.Left;v470.ZIndex=14;v761=3 -2 ;end end end if (6==v462) then v469.CornerRadius=UDim.new(1161 -(160 + 1001) ,2 + 0 );v469.Parent=v468;v470=Instance.new("TextLabel");v470.Size=UDim2.new(1 + 0 , -20,1 -0 ,358 -(237 + 121) );v470.Position=UDim2.new(897 -(525 + 372) ,37 -17 ,0 -0 ,142 -(96 + 46) );v462=7;end end end local function v335(v472,v473,v474,v475) local v476=0;local v477;local v478;local v479;local v480;local v481;local v482;local v483;local v484;local v485;local v486;local v487;local v488;local v489;while true do if (v476==(783 -(643 + 134))) then v487=Instance.new("TextButton");v487.Size=UDim2.new(1 + 0 ,0,0,47 -27 );v487.Position=UDim2.new(0 -0 ,0,0 + 0 , -7);v487.BackgroundTransparency=1 -0 ;v487.Text="";v487.ZIndex=16;v487.Parent=v478;v488=false;v476=14 -7 ;end if (v476==(721 -(316 + 403))) then v481.Size=UDim2.new(v477.val/v475 ,0 + 0 ,2 -1 ,0 + 0 );v481.BackgroundColor3=Color3.fromRGB(0 -0 ,112,245);v481.BorderSizePixel=0 + 0 ;v481.ZIndex=5 + 9 ;v481.Parent=v478;v482=Instance.new("UICorner");v482.CornerRadius=UDim.new(3 -2 ,0);v482.Parent=v481;v476=14 -11 ;end if (v476==0) then v477={val=v474};v478=Instance.new("Frame");v478.Size=UDim2.new(1 -0 , -(2 + 26),0 -0 ,1 + 5 );v478.Position=UDim2.new(0 -0 ,31 -(12 + 5) ,0,v473);v478.BackgroundColor3=Color3.fromRGB(11,38 -28 ,22);v478.BorderSizePixel=0;v478.ZIndex=13;v478.Parent=v472;v476=1 -0 ;end if (v476==4) then v484.ZIndex=15;v484.Parent=v481;v485=Instance.new("UICorner");v485.CornerRadius=UDim.new(1 -0 ,0);v485.Parent=v484;v486=Instance.new("TextLabel");v486.Size=UDim2.new(0 -0 ,11 + 41 ,1973 -(1656 + 317) ,13 + 1 );v486.Position=UDim2.new(1 + 0 , -58,0 -0 ,v473-(78 -62) );v476=5;end if (v476==7) then v489=nil;function v489(v849) local v850=0;local v851;local v852;local v853;while true do if ((356 -(5 + 349))==v850) then v1:Create(v481,TweenInfo.new(0.08 -0 ),{Size=UDim2.new(v853,1271 -(266 + 1005) ,1,0 + 0 )}):Play();v486.Text=tostring(v477.val);break;end if (v850==1) then local v960=0 -0 ;while true do if (v960==1) then v850=2;break;end if (v960==(0 -0)) then v853=math.clamp((v849-v851)/v852 ,0,1);v477.val=math.round(v853 * v475 );v960=1697 -(561 + 1135) ;end end end if (v850==(0 -0)) then local v961=0;while true do if (v961==1) then v850=3 -2 ;break;end if (v961==0) then v851=v478.AbsolutePosition.X;v852=v478.AbsoluteSize.X;v961=1067 -(507 + 559) ;end end end end end v487.MouseButton1Down:Connect(function(v854) local v855=0 -0 ;local v856;while true do if (v855==(0 -0)) then v856=388 -(212 + 176) ;while true do if (0==v856) then v488=true;v489(v854);break;end end break;end end end);v487.MouseButton1Up:Connect(function() v488=false;end);v2.InputChanged:Connect(function(v857) if (v488 and (v857.UserInputType==Enum.UserInputType.MouseMovement)) then v489(v857.Position.X);end end);v2.InputEnded:Connect(function(v858) if (v858.UserInputType==Enum.UserInputType.MouseButton1) then v488=false;end end);v487.MouseEnter:Connect(function() v1:Create(v484,TweenInfo.new(905.15 -(250 + 655) ),{BackgroundColor3=Color3.fromRGB(545 -345 ,410 -175 ,398 -143 )}):Play();end);v487.MouseLeave:Connect(function() v1:Create(v484,TweenInfo.new(1956.15 -(1869 + 87) ),{BackgroundColor3=Color3.fromRGB(409 -291 ,2106 -(484 + 1417) ,546 -291 )}):Play();end);break;end if (v476==1) then v479=Instance.new("UICorner");v479.CornerRadius=UDim.new(1 -0 ,773 -(48 + 725) );v479.Parent=v478;v480=Instance.new("UIStroke");v480.Color=Color3.fromRGB(0,68 -26 ,289 -181 );v480.Thickness=1 + 0 ;v480.Parent=v478;v481=Instance.new("Frame");v476=4 -2 ;end if (v476==(1 + 2)) then v483=Instance.new("UIGradient");v483.Color=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(0,921 -(152 + 701) ,188)),ColorSequenceKeypoint.new(1,Color3.fromRGB(30 + 48 ,1083 -(557 + 338) ,76 + 179 ))});v483.Parent=v481;v484=Instance.new("Frame");v484.Size=UDim2.new(0,33 -21 ,0 -0 ,31 -19 );v484.Position=UDim2.new(2 -1 , -6,0.5, -(807 -(499 + 302)));v484.BackgroundColor3=Color3.fromRGB(984 -(39 + 827) ,565 -360 ,569 -314 );v484.BorderSizePixel=0;v476=4;end if (v476==(19 -14)) then v486.BackgroundTransparency=1;v486.Text=tostring(v477.val);v486.TextColor3=Color3.fromRGB(94 -32 ,9 + 91 ,468 -308 );v486.TextSize=2 + 9 ;v486.Font=Enum.Font.GothamBold;v486.TextXAlignment=Enum.TextXAlignment.Right;v486.ZIndex=20 -7 ;v486.Parent=v472;v476=6;end end end local v336=nil;local function v337(v490,v491,v492) local v493={idx=1};local v494=130 -(103 + 1) ;local v495=554 -(475 + 79) ;local v496=Instance.new("Frame");v496.Size=UDim2.new(1, -(60 -32),0 -0 ,4 + 20 );v496.Position=UDim2.new(0,14,0 + 0 ,v492);v496.BackgroundColor3=Color3.fromRGB(1512 -(1395 + 108) ,8,58 -38 );v496.BorderSizePixel=1204 -(7 + 1197) ;v496.ZIndex=6 + 7 ;v496.Parent=v490;local v503=Instance.new("UICorner");v503.CornerRadius=UDim.new(0 + 0 ,323 -(27 + 292) );v503.Parent=v496;local v506=Instance.new("UIStroke");v506.Color=Color3.fromRGB(0,152 -100 ,162 -34 );v506.Thickness=4 -3 ;v506.Parent=v496;local v510=Instance.new("Frame");v510.Size=UDim2.new(0 -0 ,3 -1 ,139.7 -(43 + 96) ,0 -0 );v510.Position=UDim2.new(0,0,0.15 -0 ,0);v510.BackgroundColor3=Color3.fromRGB(0,115,204 + 41 );v510.BorderSizePixel=0 + 0 ;v510.ZIndex=14;v510.Parent=v496;local v517=Instance.new("TextLabel");v517.Size=UDim2.new(1 -0 , -(12 + 18),1 -0 ,0 + 0 );v517.Position=UDim2.new(0 + 0 ,1761 -(1414 + 337) ,1940 -(1642 + 298) ,0 -0 );v517.BackgroundTransparency=2 -1 ;v517.Text=v491[2 -1 ];v517.TextColor3=Color3.fromRGB(200,68 + 137 ,178 + 50 );v517.TextSize=983 -(357 + 615) ;v517.Font=Enum.Font.GothamBold;v517.TextXAlignment=Enum.TextXAlignment.Left;v517.ZIndex=10 + 4 ;v517.Parent=v496;local v531=Instance.new("TextLabel");v531.Size=UDim2.new(0 -0 ,19 + 3 ,2 -1 ,0);v531.Position=UDim2.new(1 + 0 , -(2 + 22),0,0 + 0 );v531.BackgroundTransparency=1302 -(384 + 917) ;v531.Text="▾";v531.TextColor3=Color3.fromRGB(697 -(128 + 569) ,1665 -(1407 + 136) ,2125 -(687 + 1200) );v531.TextSize=13;v531.Font=Enum.Font.GothamBold;v531.TextXAlignment=Enum.TextXAlignment.Center;v531.ZIndex=1724 -(556 + 1154) ;v531.Parent=v496;local v543=( #v491 * v494) + (20 -14) ;local v544=Instance.new("Frame");v544.Size=UDim2.new(95 -(9 + 86) ,160,421 -(275 + 146) ,v543);v544.BackgroundColor3=Color3.fromRGB(2 + 9 ,73 -(29 + 35) ,106 -82 );v544.BorderSizePixel=0 -0 ;v544.ZIndex=2207 -1707 ;v544.Visible=false;v544.Parent=v7;local v551=Instance.new("UICorner");v551.CornerRadius=UDim.new(0,4 + 1 );v551.Parent=v544;local v554=Instance.new("UIStroke");v554.Color=Color3.fromRGB(1012 -(53 + 959) ,488 -(312 + 96) ,329 -139 );v554.Thickness=1;v554.Transparency=285.1 -(147 + 138) ;v554.Parent=v544;local v559=Instance.new("UIGradient");v559.Color=ColorSequence.new({ColorSequenceKeypoint.new(0 + 0 ,Color3.fromRGB(15,21 -9 ,524 -(18 + 474) )),ColorSequenceKeypoint.new(3 -2 ,Color3.fromRGB(1094 -(860 + 226) ,310 -(121 + 182) ,3 + 15 ))});v559.Rotation=90;v559.Parent=v544;local v563={};for v599,v600 in ipairs(v491) do local v601=0;local v602;local v603;local v604;local v605;while true do if (v601==(1242 -(988 + 252))) then local v859=0 + 0 ;while true do if (v859==(1 + 0)) then v603.BorderSizePixel=0;v603.ZIndex=2472 -(49 + 1921) ;v859=892 -(223 + 667) ;end if (v859==0) then v603.Position=UDim2.new(52 -(51 + 1) ,0 -0 ,0.225 -0 ,0);v603.BackgroundColor3=Color3.fromRGB(0,1255 -(146 + 979) ,255);v859=1 + 0 ;end if (v859==2) then v603.Parent=v602;v601=608 -(311 + 294) ;break;end end end if (v601==(0 -0)) then v602=Instance.new("Frame");v602.Size=UDim2.new(1 + 0 ,1443 -(496 + 947) ,1358 -(1233 + 125) ,v494);v602.Position=UDim2.new(0 + 0 ,0 + 0 ,0 + 0 ,((v599-1) * v494) + (1648 -(963 + 682)) );v602.BackgroundColor3=Color3.fromRGB(0 + 0 ,1564 -(504 + 1000) ,105 + 50 );v602.BackgroundTransparency=1 + 0 ;v601=1;end if (v601==(1 + 3)) then v604.Text=v600;v604.TextColor3=((v599==v493.idx) and Color3.fromRGB(376 -121 ,218 + 37 ,149 + 106 )) or Color3.fromRGB(148,335 -(156 + 26) ,178) ;v604.TextSize=7 + 4 ;v604.Font=((v599==v493.idx) and Enum.Font.GothamBold) or Enum.Font.Gotham ;v604.TextXAlignment=Enum.TextXAlignment.Left;v601=7 -2 ;end if (v601==(165 -(149 + 15))) then local v870=0;while true do if ((960 -(890 + 70))==v870) then v602.BorderSizePixel=117 -(39 + 78) ;v602.ZIndex=501;v870=483 -(14 + 468) ;end if (v870==(2 -1)) then v602.Parent=v544;v603=Instance.new("Frame");v870=5 -3 ;end if (v870==(2 + 0)) then v603.Size=UDim2.new(0 + 0 ,1 + 2 ,0.55 + 0 ,0);v601=1 + 1 ;break;end end end if (v601==(9 -4)) then v604.ZIndex=502;v604.Parent=v602;v605=Instance.new("TextButton");v605.Size=UDim2.new(1 + 0 ,0 -0 ,1,0);v605.BackgroundTransparency=1 + 0 ;v601=6;end if (v601==(58 -(12 + 39))) then v605.MouseButton1Click:Connect(function() local v909=0;while true do if (v909==(1 + 0)) then for v1005,v1006 in ipairs(v563) do local v1007=0 -0 ;local v1008;local v1009;while true do if (v1007==(3 -2)) then if v1008 then v1008.Visible=v1005==v599 ;end if v1009 then v1009.TextColor3=((v1005==v599) and Color3.fromRGB(76 + 179 ,255,135 + 120 )) or Color3.fromRGB(375 -227 ,102 + 51 ,860 -682 ) ;v1009.Font=((v1005==v599) and Enum.Font.GothamBold) or Enum.Font.Gotham ;end v1007=1712 -(1596 + 114) ;end if (v1007==(0 -0)) then local v1024=713 -(164 + 549) ;while true do if (v1024==(1438 -(1059 + 379))) then v1008=v1006:FindFirstChildOfClass("Frame");v1009=v1006:FindFirstChildOfClass("TextLabel");v1024=1 -0 ;end if (v1024==(1 + 0)) then v1007=1 + 0 ;break;end end end if (v1007==(394 -(145 + 247))) then v1:Create(v1006,TweenInfo.new(0.1 + 0 ),{BackgroundTransparency=1 + 0 }):Play();break;end end end v544.Visible=false;v909=5 -3 ;end if (v909==(0 + 0)) then v493.idx=v599;v517.Text=v600;v909=1 + 0 ;end if (v909==3) then v1:Create(v531,TweenInfo.new(0.15),{TextColor3=Color3.fromRGB(0 -0 ,842 -(254 + 466) ,798 -(544 + 16) )}):Play();v1:Create(v506,TweenInfo.new(0.15 -0 ),{Color=Color3.fromRGB(0,52,128)}):Play();break;end if (v909==(630 -(294 + 334))) then v336=nil;v531.Text="▾";v909=3;end end end);v563[v599]=v602;break;end if (v601==(259 -(236 + 17))) then local v876=0 + 0 ;while true do if (v876==0) then v605.Text="";v605.ZIndex=392 + 111 ;v876=3 -2 ;end if (v876==(9 -7)) then v605.MouseLeave:Connect(function() if (v599~=v493.idx) then v1:Create(v602,TweenInfo.new(0.1 + 0 ),{BackgroundTransparency=1 + 0 }):Play();end end);v601=7;break;end if (v876==(795 -(413 + 381))) then v605.Parent=v602;v605.MouseEnter:Connect(function() v1:Create(v602,TweenInfo.new(0.1),{BackgroundTransparency=0.82 + 0 }):Play();end);v876=3 -1 ;end end end if (v601==(7 -4)) then v603.Visible=v599==v493.idx ;v604=Instance.new("TextLabel");v604.Size=UDim2.new(1971 -(582 + 1388) , -(34 -14),1 + 0 ,0);v604.Position=UDim2.new(364 -(326 + 38) ,35 -23 ,0,0 -0 );v604.BackgroundTransparency=1;v601=624 -(47 + 573) ;end end end local function v564() local v606=0 + 0 ;local v607;local v608;while true do if (v606==(8 -6)) then v544.Position=UDim2.new(0 -0 ,v607.X,1664 -(1269 + 395) ,v607.Y + v608.Y + 3 );v544.Visible=true;break;end if (v606==(492 -(76 + 416))) then local v883=443 -(319 + 124) ;while true do if (1==v883) then v606=2 -1 ;break;end if (v883==(1007 -(564 + 443))) then v607=v496.AbsolutePosition;v608=v496.AbsoluteSize;v883=2 -1 ;end end end if (v606==(459 -(337 + 121))) then v495=v608.X;v544.Size=UDim2.new(0 -0 ,v495,0,v543);v606=6 -4 ;end end end local function v565() local v609=1911 -(1261 + 650) ;while true do if (v609==1) then v531.Text="▾";v1:Create(v531,TweenInfo.new(0.15 + 0 ),{TextColor3=Color3.fromRGB(0 -0 ,1939 -(772 + 1045) ,238)}):Play();v609=2;end if ((0 + 0)==v609) then v544.Visible=false;v336=nil;v609=1;end if (2==v609) then v1:Create(v506,TweenInfo.new(144.15 -(102 + 42) ),{Color=Color3.fromRGB(0,1896 -(1524 + 320) ,1398 -(1049 + 221) )}):Play();break;end end end local v566=Instance.new("TextButton");v566.Size=UDim2.new(157 -(18 + 138) ,0 -0 ,1,1102 -(67 + 1035) );v566.BackgroundTransparency=1;v566.Text="";v566.ZIndex=363 -(136 + 212) ;v566.Parent=v496;v566.MouseEnter:Connect(function() v1:Create(v496,TweenInfo.new(0.12 -0 ),{BackgroundColor3=Color3.fromRGB(12 + 2 ,12 + 0 ,1634 -(240 + 1364) )}):Play();end);v566.MouseLeave:Connect(function() v1:Create(v496,TweenInfo.new(1082.12 -(1050 + 32) ),{BackgroundColor3=Color3.fromRGB(32 -23 ,5 + 3 ,1075 -(331 + 724) )}):Play();end);v566.MouseButton1Click:Connect(function() if (v336 and (v336~=v565)) then v336();end if v544.Visible then v565();else local v812=0 + 0 ;while true do if (v812==(644 -(269 + 375))) then v564();v336=v565;v812=1;end if (v812==(727 -(267 + 458))) then v1:Create(v506,TweenInfo.new(0.15 + 0 ),{Color=Color3.fromRGB(0 -0 ,908 -(667 + 151) ,200)}):Play();break;end if (v812==1) then v531.Text="▴";v1:Create(v531,TweenInfo.new(1497.15 -(1410 + 87) ),{TextColor3=Color3.fromRGB(2017 -(1504 + 393) ,190,689 -434 )}):Play();v812=5 -3 ;end end end end);end v332(v313,"Target Aim",802 -(461 + 335) );v334(v313,"Enabled",5 + 27 ,true);v333(v313,"Keybind",1819 -(1730 + 31) ,Color3.fromRGB(1757 -(728 + 939) ,336 -241 ,243 -123 ));v333(v313,"Aim Part",173 -97 ,Color3.fromRGB(1168 -(138 + 930) ,106,121 + 11 ));v337(v313,{"HumanoidRootPart","Head","UpperTorso","LowerTorso","RightArm","LeftArm"},158 -67 );v334(v313,"Auto Shoot",118 + 7 ,false);v334(v313,"Auto Reload",148,false);v334(v313,"Look At Target",171,false);v334(v313,"Spectate Target",1 + 193 ,false);v334(v313,"Auto Switch",217,false);v334(v313,"Closest Body Part",240,false);v334(v313,"Use Air Part",759 -494 ,false);v333(v313,"Air Part",289,Color3.fromRGB(13 + 87 ,353 -247 ,132));v337(v313,{"LowerTorso","UpperTorso","Head","HumanoidRootPart"},241 + 63 );v334(v313,"Anti Ground Shots",338,false);v333(v313,"Takeoff Amount",1133 -768 ,Color3.fromRGB(738 -(448 + 190) ,35 + 71 ,132));v335(v313,382,4 + 3 ,14 + 6 );v334(v313,"Use FOV",407,false);v334(v313,"Visualize FOV",1653 -1223 ,false);v333(v313,"FOV Radius",1416 -960 ,Color3.fromRGB(1594 -(1307 + 187) ,106,523 -391 ));v335(v313,1107 -634 ,306 -206 ,500);v333(v313,"FOV Color",1177 -(232 + 451) ,Color3.fromRGB(100,106,127 + 5 ));local v338=Instance.new("Frame");v338.Size=UDim2.new(0 + 0 ,592 -(510 + 54) ,0 -0 ,52 -(13 + 23) );v338.Position=UDim2.new(1 -0 , -(63 -19),0 -0 ,494);v338.BackgroundColor3=Color3.fromRGB(1308 -(830 + 258) ,30,282 -202 );v338.BorderSizePixel=0;v338.ZIndex=9 + 5 ;v338.Parent=v313;local v345=Instance.new("UICorner");v345.CornerRadius=UDim.new(0 + 0 ,1444 -(860 + 581) );v345.Parent=v338;local v348=Instance.new("UIStroke");v348.Color=Color3.fromRGB(255,295 -215 ,104 + 26 );v348.Thickness=242 -(237 + 4) ;v348.Transparency=0.38 -0 ;v348.Parent=v338;v334(v313,"Use Checks",1315 -795 ,false);v332(v326,"Target Strafe",6);v334(v326,"Enabled",59 -27 ,false);v333(v326,"Keybind",58,Color3.fromRGB(90,78 + 17 ,69 + 51 ));v334(v326,"Bypass Destroy",286 -210 ,false);v333(v326,"Pattern",102,Color3.fromRGB(43 + 57 ,106,132));v337(v326,{"Normal","Circle","Figure8","Random"},117);v333(v326,"Speed",154,Color3.fromRGB(282 -182 ,478 -(45 + 327) ,132));v335(v326,322 -151 ,1,512 -(444 + 58) );v333(v326,"Height",86 + 111 ,Color3.fromRGB(18 + 82 ,52 + 54 ,382 -250 ));v335(v326,1946 -(64 + 1668) ,5,30);v333(v326,"Distance",240,Color3.fromRGB(100,106,132));v335(v326,2230 -(1227 + 746) ,10,50);v332(v326,"Stomp",872 -588 );v334(v326,"Auto Stomp",575 -265 ,false);v334(v326,"Target Only (TP Mode)",333,false);v334(v326,"Knock Stomp",854 -(415 + 79) ,false);v334(v326,"Target Only",10 + 373 ,false);v334(v326,"Use Range",406,true);v333(v326,"Range (studs)",925 -(142 + 349) ,Color3.fromRGB(100,106,132));local v353=Instance.new("TextLabel");v353.Size=UDim2.new(1, -(9 + 11),0 -0 ,10 + 10 );v353.Position=UDim2.new(0 + 0 ,38 -24 ,1864 -(1710 + 154) ,452);v353.BackgroundTransparency=319 -(200 + 118) ;v353.Text="50";v353.TextColor3=Color3.fromRGB(31 + 45 ,258 -110 ,343 -111 );v353.TextSize=14 + 1 ;v353.Font=Enum.Font.GothamBold;v353.TextXAlignment=Enum.TextXAlignment.Left;v353.ZIndex=13 + 0 ;v353.Parent=v326;local v364=v307(v300);local v365=v307(v300);local v366=v307(v300);local v367=v307(v300);v364.Visible=false;v365.Visible=false;v366.Visible=false;v367.Visible=false;local v372={v308,v364,v365,v366,v367};local v373={"Rage","Visuals","World","Exploits","Settings"};local v374={};for v572,v573 in ipairs(v373) do local v574=0;local v575;local v576;local v577;local v578;while true do if (v574==(1 + 0)) then v575.Text=v573;v575.TextColor3=((v572==(2 -1)) and Color3.fromRGB(175 + 80 ,1919 -(674 + 990) ,255)) or Color3.fromRGB(32 + 78 ,48 + 68 ,144) ;v575.TextSize=18 -6 ;v575.Font=((v572==(1056 -(507 + 548))) and Enum.Font.GothamBold) or Enum.Font.Gotham ;v574=2;end if (v574==2) then v575.ZIndex=12;v575.Parent=v286;v576=Instance.new("Frame");v576.Position=UDim2.new(0.175,837 -(289 + 548) ,1819 -(821 + 997) , -(257 -(195 + 60)));v574=1 + 2 ;end if (v574==(1505 -(251 + 1250))) then v576.Size=((v572==(2 -1)) and UDim2.new(0.65,0 + 0 ,0,2)) or UDim2.new(1032 -(809 + 223) ,0 -0 ,0,5 -3 ) ;v577=Instance.new("UICorner");v577.CornerRadius=UDim.new(3 -2 ,0 + 0 );v577.Parent=v576;v574=3 + 2 ;end if (v574==(623 -(14 + 603))) then v578.BorderSizePixel=129 -(118 + 11) ;v578.ZIndex=11;v578.Parent=v575;v374[v572]={btn=v575,ul=v576,tbg=v578};v574=2 + 5 ;end if (v574==(3 + 0)) then v576.BorderSizePixel=0 -0 ;v576.ZIndex=13;v576.Parent=v575;v576.BackgroundColor3=Color3.fromRGB(949 -(551 + 398) ,135,162 + 93 );v574=4;end if (v574==(3 + 4)) then v575.MouseButton1Click:Connect(function() local v888=0;while true do if (v888==(1 + 0)) then v372[v572].Visible=true;v1:Create(v374[v572].ul,TweenInfo.new(0.25,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Size=UDim2.new(0.65 -0 ,0 -0 ,0 + 0 ,7 -5 )}):Play();v888=1 + 1 ;end if ((91 -(40 + 49))==v888) then v1:Create(v374[v572].tbg,TweenInfo.new(0.22,Enum.EasingStyle.Sine),{BackgroundTransparency=0.87}):Play();v575.TextColor3=Color3.fromRGB(971 -716 ,745 -(99 + 391) ,211 + 44 );v888=3;end if (v888==(13 -10)) then v575.Font=Enum.Font.GothamBold;break;end if (v888==(0 -0)) then if v336 then v336();end for v1002=1 + 0 , #v372 do local v1003=0 -0 ;while true do if ((1604 -(1032 + 572))==v1003) then v372[v1002].Visible=false;v1:Create(v374[v1002].ul,TweenInfo.new(0.22,Enum.EasingStyle.Sine),{Size=UDim2.new(417 -(203 + 214) ,1817 -(568 + 1249) ,0 + 0 ,4 -2 )}):Play();v1003=1;end if (2==v1003) then v374[v1002].btn.Font=Enum.Font.Gotham;break;end if (v1003==(3 -2)) then v1:Create(v374[v1002].tbg,TweenInfo.new(0.22,Enum.EasingStyle.Sine),{BackgroundTransparency=1}):Play();v374[v1002].btn.TextColor3=Color3.fromRGB(1416 -(913 + 393) ,116,406 -262 );v1003=2 -0 ;end end end v888=411 -(269 + 141) ;end end end);v575.MouseEnter:Connect(function() if v372[v572].Visible then return;end v1:Create(v575,TweenInfo.new(0.14 -0 ),{TextColor3=Color3.fromRGB(2161 -(362 + 1619) ,1811 -(950 + 675) ,210)}):Play();end);v575.MouseLeave:Connect(function() local v889=0 + 0 ;while true do if ((1179 -(216 + 963))==v889) then if v372[v572].Visible then return;end v1:Create(v575,TweenInfo.new(1287.14 -(485 + 802) ),{TextColor3=Color3.fromRGB(669 -(432 + 127) ,1189 -(1065 + 8) ,80 + 64 )}):Play();break;end end end);break;end if ((1601 -(635 + 966))==v574) then v575=Instance.new("TextButton");v575.Size=UDim2.new(0,78 + 30 ,1,42 -(5 + 37) );v575.Position=UDim2.new(0 -0 ,(v572-1) * 108 ,0 + 0 ,0 -0 );v575.BackgroundTransparency=1;v574=1 + 0 ;end if (5==v574) then v578=Instance.new("Frame");v578.Size=UDim2.new(1,0,1 -0 ,0 -0 );v578.BackgroundColor3=Color3.fromRGB(0 -0 ,131 -76 ,105 + 40 );v578.BackgroundTransparency=((v572==(530 -(318 + 211))) and (0.87 -0)) or 1 ;v574=1593 -(963 + 624) ;end end end v2.InputBegan:Connect(function(v579) if ((v579.UserInputType==Enum.UserInputType.MouseButton1) and v336) then task.defer(function() if v336 then v336();end end);end end);local v375,v376,v377=false,nil,nil;v230.InputBegan:Connect(function(v580) if (v580.UserInputType==Enum.UserInputType.MouseButton1) then local v610=0 + 0 ;while true do if (v610==(846 -(518 + 328))) then v375=true;v376=v580.Position;v610=1;end if (v610==(2 -1)) then v377=v209.Position;break;end end end end);v230.InputEnded:Connect(function(v581) if (v581.UserInputType==Enum.UserInputType.MouseButton1) then v375=false;end end);v2.InputChanged:Connect(function(v582) if (v375 and (v582.UserInputType==Enum.UserInputType.MouseMovement)) then local v611=0 -0 ;local v612;while true do if (v611==0) then v612=v582.Position-v376 ;v209.Position=UDim2.new(v377.X.Scale,v377.X.Offset + v612.X ,v377.Y.Scale,v377.Y.Offset + v612.Y );break;end end end end);task.spawn(function() local v583=317 -(301 + 16) ;local v584;local v585;while true do if (v583==3) then task.wait(2 -1 );v25.Visible=false;pcall(function() v14:Play();end);task.delay(0.1 -0 ,function() pcall(function() v18:Play();end);end);v583=4;end if (0==v583) then task.wait(2 -1 );v584="REVELENCY";for v890=1 + 0 , #v584 do local v891=0 + 0 ;while true do if (v891==(0 -0)) then v70.Text=v584:sub(1 + 0 ,v890);v56.Text=v584:sub(1 + 0 ,v890);v891=1;end if (v891==1) then task.wait(0.28 -0 );break;end end end task.delay(1.5,function() if v86 then v86.TextTransparency=1;end end);v583=1;end if ((1 + 1)==v583) then task.wait(1020.5 -(829 + 190) );v1:Create(v22,TweenInfo.new(3.1 -2 ),{Size=0 -0 }):Play();for v892,v893 in ipairs(v25:GetDescendants()) do pcall(function() local v913=0 -0 ;while true do if (v913==(0 -0)) then if v893:IsA("TextLabel") then v1:Create(v893,TweenInfo.new(0.75 + 0 ),{TextTransparency=1}):Play();end if v893:IsA("Frame") then v1:Create(v893,TweenInfo.new(0.75 + 0 ),{BackgroundTransparency=2 -1 }):Play();end break;end end end);end v1:Create(v25,TweenInfo.new(0.9 + 0 ,Enum.EasingStyle.Sine),{BackgroundTransparency=614 -(520 + 93) }):Play();v583=279 -(259 + 17) ;end if (v583==5) then task.delay(0.3 + 0 ,function() for v914,v915 in ipairs(v209:GetDescendants()) do pcall(function() if (v915:IsA("TextLabel") or v915:IsA("TextButton")) then local v1004=0 + 0 ;while true do if (v1004==(0 -0)) then v915.TextTransparency=592 -(396 + 195) ;v1:Create(v915,TweenInfo.new(0.5 -0 ),{TextTransparency=1761 -(440 + 1321) }):Play();break;end end end end);end end);break;end if (v583==(1830 -(1059 + 770))) then v1:Create(v99,TweenInfo.new(1.1),{TextTransparency=0}):Play();task.wait(0.8);v585=0;while v585<100  do local v894=0 -0 ;local v895;while true do if (v894==(547 -(424 + 121))) then local v982=0;while true do if (v982==(0 + 0)) then v895=nil;if (v585<10) then v895=math.random(1373 -(641 + 706) ,46)/(40 + 60) ;elseif (v585<40) then v895=math.random(454 -(249 + 191) ,121 -93 )/(45 + 55) ;elseif (v585<70) then v895=math.random(38 -28 ,21)/(527 -(183 + 244)) ;elseif (v585<(5 + 85)) then v895=math.random(744 -(434 + 296) ,28)/100 ;else v895=math.random(89 -61 ,562 -(169 + 343) )/(88 + 12) ;end v982=1 -0 ;end if (v982==(2 -1)) then v894=3 + 0 ;break;end end end if (v894==0) then v585=math.min(v585 + (2 -1) ,100);v1:Create(v126,TweenInfo.new(1123.22 -(651 + 472) ,Enum.EasingStyle.Sine),{Size=UDim2.new(v585/(76 + 24) ,0,1,0)}):Play();v894=1;end if (v894==(2 + 1)) then task.wait(v895);break;end if (v894==(1 -0)) then v162.Text=v585   .. "%" ;if v206[v585] then v173.Text=v206[v585];end v894=485 -(397 + 86) ;end end end v583=2;end if (v583==(880 -(423 + 453))) then v209.Visible=true;v209.Position=UDim2.new(0.5 + 0 , -v207/(1 + 1) ,0.5 + 0 ,( -v208/(2 + 0)) -(43 + 5) );v209.BackgroundTransparency=1191 -(50 + 1140) ;v1:Create(v209,TweenInfo.new(0.75,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Position=UDim2.new(0.5, -v207/(2 + 0) ,0.5 + 0 , -v208/2 ),BackgroundTransparency=0 + 0 }):Play();v583=7 -2 ;end end end);print("[REVELENCY] Loaded.");
--- ⚠️ WARNING: integrity protected!
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+--// UNIVERSAL Da Hood / Da Strike / Zee Hood — ULTRA v14 (ZEE EDITION FINAL)
+--// 🔥 Исправлено: Zee Hood больше не определяется как unsupported
 
-]]--
+-- ========== АНТИЧИТ БАЙПАС ==========
+local g = getinfo or debug.getinfo
+local d = false
+local h = {}
+local x, y
+setthreadidentity(2)
+for i, v in getgc(true) do
+    if typeof(v) == "table" then
+        local a = rawget(v, "Detected")
+        local b = rawget(v, "Kill")
+        if typeof(a) == "function" and not x then
+            x = a
+            local o; o = hookfunction(x, function(c, f, n) if c ~= "_" then if d then warn(`Adonis AntiCheat flagged\nMethod: {c}\nInfo: {f}`) end end return true end)
+            table.insert(h, x)
+        end
+        if rawget(v, "Variables") and rawget(v, "Process") and typeof(b) == "function" and not y then
+            y = b
+            local o; o = hookfunction(y, function(f) if d then warn(`Adonis AntiCheat tried to kill (fallback): {f}`) end end)
+            table.insert(h, y)
+        end
+    end
+end
+local o; o = hookfunction(getrenv().debug.info, newcclosure(function(...)
+    local a, f = ...
+    if x and a == x then if d then warn(`zins | adonis bypassed`) end return coroutine.yield(coroutine.running()) end
+    return o(...)
+end))
+setthreadidentity(7)
+-- ========== КОНЕЦ БАЙПАСА ==========
+
+getgenv().ResolveKey = "C"
+getgenv().CamlockKey = "F"
+getgenv().SilentKey = "V"
+getgenv().AutoAirKey = "B"
+getgenv().TriggerKey = "T"
+getgenv().GuiKey = "M"
+getgenv().LegitSmoothKey = "L"
+getgenv().BlatantKey = "K"
+getgenv().SilentLockKey = "Q"
+getgenv().AutoShootKey = "J"
+getgenv().ComboKey = "N"
+
+-- === НАСТРОЙКИ ===
+getgenv().Smoothing = 0.35
+getgenv().LegitSmoothing = 0.018
+getgenv().BlatantSmoothing = 0.070
+getgenv().BasePred = 0.16382699999999998
+getgenv().PredPingFactor = 0.00029
+getgenv().PredDistFactor = 0.000052
+getgenv().PredVelFactor = 0.0102
+getgenv().MaxPred = 0.16382699999999998
+getgenv().MinPred = 0.16382699999999998
+getgenv().PredX = 0.16382699999999998
+getgenv().PredY = 0.16382699999999998
+getgenv().Radius = 235
+getgenv().TriggerFOV = 50
+getgenv().JumpOffsetBase = -0.5
+getgenv().FallOffsetBase = -0.5
+getgenv().AirExtraBoostBase = 0.048
+getgenv().AirVelFactor = 0.00285
+getgenv().VelSmooth = 0.78
+getgenv().airTriggerDelay = 0.15
+getgenv().airFireRate = 0.015
+getgenv().TriggerFireRate = 0.032
+getgenv().useHoldMode = false
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UIS = game:GetService("UserInputService")
+local Stats = game:GetService("Stats")
+local Camera = workspace.CurrentCamera
+local LocalPlayer = Players.LocalPlayer
+local WS = game:GetService("Workspace")
+local RS = game:GetService("ReplicatedStorage")
+
+local MainRemote = nil
+local ShootArg = nil
+local detectedGame = "Unknown"
+
+-- ========== ОПРЕДЕЛЕНИЕ ИГРЫ ==========
+local placeId = game.PlaceId
+print("Place ID:", placeId)
+
+if placeId == 99692075138533 then
+    -- Zee Hood
+    detectedGame = "Zee Hood"
+    if RS:FindFirstChild("MainEvent") then
+        MainRemote = RS.MainEvent
+        ShootArg = "UpdateMousePos"
+    else
+        -- Ищем любой RemoteEvent с подходящим названием
+        for _, remote in ipairs(RS:GetChildren()) do
+            if remote:IsA("RemoteEvent") then
+                local name = remote.Name:lower()
+                if name:find("main") or name:find("shoot") or name:find("mouse") or name:find("fire") then
+                    MainRemote = remote
+                    ShootArg = "UpdateMousePos"
+                    detectedGame = "Zee Hood (" .. remote.Name .. ")"
+                    break
+                end
+            end
+        end
+    end
+elseif placeId == 2788229376 or placeId == 7213786345 then
+    -- Da Hood
+    MainRemote = RS:FindFirstChild("MainEvent")
+    ShootArg = "UpdateMousePos"
+    detectedGame = "Da Hood"
+elseif placeId == 5602055394 or placeId == 7951883376 then
+    -- Hood Modded
+    MainRemote = RS:FindFirstChild("Bullets")
+    ShootArg = "MousePos"
+    detectedGame = "Hood Modded"
+elseif RS:FindFirstChild("MAINEVENT") then
+    MainRemote = RS.MAINEVENT
+    ShootArg = "MOUSE"
+    detectedGame = "Da Strike"
+else
+    -- Fallback: поиск любого RemoteEvent
+    for _, remote in ipairs(RS:GetChildren()) do
+        if remote:IsA("RemoteEvent") and (remote.Name:lower():find("main") or remote.Name:lower():find("shoot") or remote.Name:lower():find("mouse")) then
+            MainRemote = remote
+            ShootArg = "UpdateMousePos"
+            detectedGame = "Copy (" .. remote.Name .. ")"
+            break
+        end
+    end
+end
+
+if not MainRemote then
+    warn("⚠️ Не удалось определить ремоут для стрельбы. Silent Aim не будет работать.")
+else
+    print("✅ Detected: " .. detectedGame .. " | Remote: " .. MainRemote.Name .. " | Arg: " .. ShootArg)
+end
+
+local resolver = false
+local silentAim = false
+local camlock = false
+local lockedTarget = nil
+local autoAirFire = false
+local triggerBot = false
+local legitSmooth = false
+local blatantMode = false
+local silentLockEnabled = false
+local silentLockedTarget = nil
+local autoShoot = false
+local comboMode = false
+
+local lastPos, lastTime, lastVel, velHistory = {}, {}, {}, {}
+local airStart = {}
+local hitCount = 0
+local currentPing = 50
+local lastAutoFire = 0
+local lastTriggerFire = 0
+local lastAutoShoot = 0
+local forceTarget = nil
+
+local function isKatana(tool)
+    if not tool then return false end
+    local n = tool.Name:lower()
+    return n:find("katana") or (tool.ToolTip and tool.ToolTip:lower():find("katana"))
+end
+
+local function isVisible(plr)
+    if not plr or not plr.Character or not LocalPlayer.Character then return false end
+    local targetPart = plr.Character:FindFirstChild("Head") or plr.Character:FindFirstChild("UpperTorso") or plr.Character:FindFirstChild("HumanoidRootPart")
+    if not targetPart then return false end
+    local origin = Camera.CFrame.Position
+    local direction = (targetPart.Position - origin)
+    local raycastParams = RaycastParams.new()
+    raycastParams.FilterDescendantsInstances = {LocalPlayer.Character}
+    raycastParams.FilterType = Enum.RaycastFilterType.Exclude
+    raycastParams.IgnoreWater = true
+    local result = workspace:Raycast(origin, direction, raycastParams)
+    if not result then return true end
+    return result.Instance and result.Instance:IsDescendantOf(plr.Character)
+end
+
+spawn(function()
+    while wait(0.3) do
+        local pingItem = Stats.Network.ServerStatsItem["Data Ping"]
+        currentPing = pingItem and pingItem:GetValue() or 50
+    end
+end)
+
+local function getPred(target)
+    local pingMs = currentPing
+    local base = getgenv().BasePred + (pingMs * getgenv().PredPingFactor)
+    if target and target.Character and LocalPlayer.Character then
+        local targetRoot = target.Character:FindFirstChild("HumanoidRootPart")
+        local myRoot = LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+        if targetRoot and myRoot then
+            local dist = (targetRoot.Position - myRoot.Position).Magnitude
+            base = base + dist * getgenv().PredDistFactor
+            local targetVel = targetRoot.AssemblyLinearVelocity
+            local myVel = myRoot.AssemblyLinearVelocity
+            local relVel = (targetVel - myVel).Magnitude
+            base = base + relVel * getgenv().PredVelFactor
+            if relVel > 55 then base = base + (relVel - 55) * 0.0028 end
+            if blatantMode then base = base - 0.0035 end
+            local hum = target.Character:FindFirstChild("Humanoid")
+            if hum and (hum:GetState() == Enum.HumanoidStateType.Jumping or hum:GetState() == Enum.HumanoidStateType.Freefall) then
+                base = base + (math.abs(targetVel.Y) > 12 and 0.0032 or 0.001)
+            end
+        end
+    end
+    return math.clamp(base, getgenv().MinPred, getgenv().MaxPred)
+end
+
+local function findClosest(customRadius)
+    local r = customRadius or getgenv().Radius
+    local closest, minDist = nil, r
+    local center = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+    for _, plr in ipairs(Players:GetPlayers()) do
+        if plr ~= LocalPlayer and plr.Character then
+            local hrp = plr.Character:FindFirstChild("HumanoidRootPart")
+            local hum = plr.Character:FindFirstChild("Humanoid")
+            if hrp and hum and hum.Health > 0 then
+                local screen, onScreen = Camera:WorldToViewportPoint(hrp.Position)
+                if onScreen then
+                    local dist2d = (Vector2.new(screen.X, screen.Y) - center).Magnitude
+                    if dist2d < minDist then minDist = dist2d; closest = plr end
+                end
+            end
+        end
+    end
+    return closest
+end
+
+local function getCustomVel(hrp, plr)
+    local t = tick()
+    if not lastPos[plr] then
+        lastPos[plr], lastTime[plr] = hrp.Position, t
+        return hrp.AssemblyLinearVelocity
+    end
+    local dt = math.clamp(t - lastTime[plr], 1/240, 1/30)
+    local newVel = (hrp.Position - lastPos[plr]) / dt
+    local hist = velHistory[plr] or {}
+    table.insert(hist, newVel)
+    if #hist > 15 then table.remove(hist, 1) end
+    velHistory[plr] = hist
+    local avgVel = #hist > 1 and (function() local s = Vector3.zero; for _,v in hist do s += v end; return s/#hist end)() or newVel
+    if lastVel[plr] then avgVel = avgVel:Lerp(lastVel[plr], getgenv().VelSmooth) end
+    lastVel[plr], lastPos[plr], lastTime[plr] = avgVel, hrp.Position, t
+    return avgVel
+end
+
+local function getAimPos(plr)
+    if not plr or not plr.Character then return Vector3.new() end
+    local root = plr.Character:FindFirstChild("HumanoidRootPart")
+    if not root then return Vector3.new() end
+    
+    local partName = blatantMode and "UpperTorso" or "Head"
+    local aimPart = plr.Character:FindFirstChild(partName) or root
+    
+    local pos = aimPart.Position
+    local vel = resolver and getCustomVel(root, plr) or root.AssemblyLinearVelocity
+    local g = WS.Gravity
+    local offsetY = 0
+    local hum = plr.Character:FindFirstChild("Humanoid")
+    local isAir = hum and (hum:GetState() == Enum.HumanoidStateType.Jumping or hum:GetState() == Enum.HumanoidStateType.Freefall)
+    if isAir then
+        local baseOffset = (hum:GetState() == Enum.HumanoidStateType.Freefall) and getgenv().FallOffsetBase or getgenv().JumpOffsetBase
+        local velEffect = math.abs(vel.Y) * getgenv().AirVelFactor
+        offsetY = baseOffset + velEffect + (vel.Y > 0 and getgenv().AirExtraBoostBase or 0)
+        if vel.Y > 22 then offsetY = offsetY + (vel.Y - 22) * 0.0011 end
+    end
+    pos = pos + Vector3.new(0, offsetY, 0)
+    
+    local tX = getgenv().PredX
+    local tY = getgenv().PredY
+    local predXZ = Vector3.new(vel.X * tX, 0, vel.Z * tX)
+    local predY = isAir and (vel.Y * tY - 0.5 * g * tY * tY + (vel.Y > 0 and 0.24 * tY or 0)) or (vel.Y * tY)
+    
+    return pos + predXZ + Vector3.new(0, predY, 0)
+end
+
+local function hookTool(tool)
+    if not tool:IsA("Tool") then return end
+    tool.Activated:Connect(function()
+        local target = forceTarget
+        if not target and silentLockEnabled and silentLockedTarget then target = silentLockedTarget
+        elseif not target and silentAim then target = findClosest() end
+        if target and MainRemote then
+            local aimPos = getAimPos(target)
+            pcall(function()
+                MainRemote:FireServer(ShootArg, aimPos)
+            end)
+            hitCount += 1
+        end
+    end)
+end
+
+local function onChar(char)
+    char.ChildAdded:Connect(hookTool)
+    for _, v in char:GetChildren() do hookTool(v) end
+end
+if LocalPlayer.Character then onChar(LocalPlayer.Character) end
+LocalPlayer.CharacterAdded:Connect(onChar)
+
+-- ========== GUI + DOT ==========
+local sg = Instance.new("ScreenGui")
+sg.Name = "UniversalNeverMissDH"
+sg.Parent = game.CoreGui
+sg.Enabled = true
+local fr = Instance.new("Frame", sg)
+fr.Size = UDim2.new(0,460,0,460)
+fr.Position = UDim2.new(0,15,0,15)
+fr.BackgroundColor3 = Color3.fromRGB(10,10,10)
+fr.Draggable = true
+Instance.new("UICorner", fr).CornerRadius = UDim.new(0,12)
+local lbl = Instance.new("TextLabel", fr)
+lbl.Size = UDim2.new(1,0,1,0)
+lbl.BackgroundTransparency = 1
+lbl.TextColor3 = Color3.new(1,1,1)
+lbl.Font = Enum.Font.Code
+lbl.TextSize = 13.5
+lbl.TextXAlignment = Enum.TextXAlignment.Left
+lbl.Position = UDim2.new(0,12,0,0)
+
+local dotGui = Instance.new("ScreenGui")
+dotGui.Name = "SilentLockDot"
+dotGui.Parent = game.CoreGui
+dotGui.ResetOnSpawn = false
+local dot = Instance.new("Frame", dotGui)
+dot.Size = UDim2.new(0,9,0,9)
+dot.AnchorPoint = Vector2.new(0.5,0.5)
+dot.BackgroundColor3 = Color3.new(1,1,1)
+dot.BorderSizePixel = 0
+dot.Visible = false
+Instance.new("UICorner", dot).CornerRadius = UDim.new(0,4)
+
+RunService.Heartbeat:Connect(function()
+    local lt = lockedTarget and lockedTarget.Name or "None"
+    local slt = silentLockedTarget and silentLockedTarget.Name or "None"
+    lbl.Text = "Game: "..detectedGame.." | PRED X: "..string.format("%.4f", getgenv().PredX).." | PRED Y: "..string.format("%.4f", getgenv().PredY).." | PING: "..currentPing.."ms\n"..
+               "Silent: "..(silentAim and "ON (V)" or "OFF").."\n"..
+               "Silent Lock: "..(silentLockEnabled and "ON (Q) ["..slt.."]" or "OFF").."\n"..
+               "Camlock: "..(camlock and "ON (F) ["..lt.."]" or "OFF").."\n"..
+               "Combo Mode: "..(comboMode and "ON (N)" or "OFF").."\n"..
+               "Resolver: "..(resolver and "ON (C)" or "OFF").."\n"..
+               "Blatant Mode: "..(blatantMode and "ON (K) — Torso" or "OFF — Head").."\n"..
+               "Auto Air: "..(autoAirFire and "ON (B)" or "OFF").."\n"..
+               "Trigger Bot: "..(triggerBot and "ON (T) [FOV 50]" or "OFF").."\n"..
+               "Auto Shoot: "..(autoShoot and "ON (J) [РАБОТАЕТ!]" or "OFF").."\n"..
+               "Hits: "..hitCount
+end)
+
+-- ========== KEYBINDS ==========
+UIS.InputBegan:Connect(function(input, gp)
+    if gp then return end
+    local k = input.KeyCode.Name
+    if k == getgenv().ResolveKey then resolver = not resolver
+    elseif k == getgenv().CamlockKey then
+        if comboMode then
+            local wasOn = camlock
+            camlock = not camlock
+            silentLockEnabled = camlock
+            if camlock and not wasOn then
+                local target = findClosest()
+                if target then
+                    lockedTarget = target
+                    silentLockedTarget = target
+                    print("🔒 COMBO LOCK ON → "..target.Name)
+                end
+            else
+                lockedTarget = nil
+                silentLockedTarget = nil
+                print("🔓 COMBO LOCK OFF")
+            end
+        else
+            camlock = not camlock
+            lockedTarget = camlock and findClosest() or nil
+        end
+    elseif k == getgenv().SilentKey then silentAim = not silentAim
+    elseif k == getgenv().AutoAirKey then autoAirFire = not autoAirFire
+    elseif k == getgenv().TriggerKey then triggerBot = not triggerBot
+    elseif k == getgenv().GuiKey then sg.Enabled = not sg.Enabled
+    elseif k == getgenv().LegitSmoothKey and not blatantMode then
+        legitSmooth = not legitSmooth
+        if legitSmooth then blatantMode = false end
+    elseif k == getgenv().BlatantKey then
+        blatantMode = not blatantMode
+        if blatantMode then legitSmooth = false end
+    elseif k == getgenv().SilentLockKey then
+        if not silentLockEnabled then
+            local target = findClosest()
+            if target then
+                silentLockEnabled = true
+                silentLockedTarget = target
+                print("🔒 Silent Lock ON → "..target.Name)
+            end
+        else
+            silentLockEnabled = false
+            silentLockedTarget = nil
+            print("🔓 Silent Lock OFF")
+        end
+    elseif k == getgenv().AutoShootKey then
+        autoShoot = not autoShoot
+        print("Auto Shoot: "..(autoShoot and "ВКЛ (стреляет через Activate!)" or "ВЫКЛ"))
+    elseif k == getgenv().ComboKey then
+        comboMode = not comboMode
+        print("Combo Mode: "..(comboMode and "ВКЛ" or "ВЫКЛ"))
+    end
+end)
+
+-- ========== CAMLOCK + DOT ==========
+RunService.RenderStepped:Connect(function()
+    if camlock and lockedTarget then
+        local aim = getAimPos(lockedTarget)
+        local targetCFrame = CFrame.lookAt(Camera.CFrame.Position, aim)
+        if blatantMode then
+            Camera.CFrame = targetCFrame
+        elseif legitSmooth then
+            Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, getgenv().LegitSmoothing)
+        else
+            Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, getgenv().Smoothing)
+        end
+    end
+    
+    if silentLockEnabled and silentLockedTarget and silentLockedTarget.Character then
+        local partName = blatantMode and "UpperTorso" or "Head"
+        local torso = silentLockedTarget.Character:FindFirstChild(partName) or silentLockedTarget.Character:FindFirstChild("HumanoidRootPart")
+        if torso then
+            local screenPos, onScreen = Camera:WorldToViewportPoint(torso.Position)
+            if onScreen then
+                dot.Position = UDim2.new(0, screenPos.X, 0, screenPos.Y)
+                dot.Visible = true
+            else
+                dot.Visible = false
+            end
+        else
+            dot.Visible = false
+        end
+    else
+        dot.Visible = false
+    end
+end)
+
+-- ========== AUTO-UNLOCK + TRIGGER + AUTO SHOOT ==========
+RunService.Heartbeat:Connect(function()
+    local function isLowHP(target)
+        if not target or not target.Character then return true end
+        local hum = target.Character:FindFirstChild("Humanoid")
+        return not hum or hum.Health <= 1
+    end
+    
+    if camlock and lockedTarget and isLowHP(lockedTarget) then
+        camlock = false; lockedTarget = nil
+    end
+    if silentLockEnabled and silentLockedTarget and isLowHP(silentLockedTarget) then
+        silentLockEnabled = false; silentLockedTarget = nil
+    end
+    
+    -- TRIGGER BOT
+    if triggerBot then
+        local shouldFire = not getgenv().useHoldMode or UIS:IsMouseButtonPressed(Enum.UserInputType.MouseButton2)
+        if shouldFire and tick() - lastTriggerFire >= getgenv().TriggerFireRate then
+            local target = nil
+            if silentLockEnabled and silentLockedTarget then target = silentLockedTarget
+            elseif camlock and lockedTarget then target = lockedTarget
+            else target = findClosest(getgenv().TriggerFOV) end
+            if target and isVisible(target) then
+                local tool = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Tool")
+                if tool and not isKatana(tool) then
+                    forceTarget = target
+                    if MainRemote then
+                        local aimPos = getAimPos(target)
+                        pcall(function()
+                            MainRemote:FireServer(ShootArg, aimPos)
+                        end)
+                    else
+                        tool:Activate()
+                    end
+                    forceTarget = nil
+                    lastTriggerFire = tick()
+                    hitCount += 1
+                end
+            end
+        end
+    end
+    
+    -- AUTO SHOOT
+    if autoShoot then
+        if tick() - lastAutoShoot >= getgenv().TriggerFireRate then
+            local target = nil
+            if silentLockEnabled and silentLockedTarget then target = silentLockedTarget
+            elseif camlock and lockedTarget then target = lockedTarget
+            elseif silentAim then target = findClosest() end
+            if target and isVisible(target) then
+                local tool = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Tool")
+                if tool and not isKatana(tool) then
+                    forceTarget = target
+                    if MainRemote then
+                        local aimPos = getAimPos(target)
+                        pcall(function()
+                            MainRemote:FireServer(ShootArg, aimPos)
+                        end)
+                    else
+                        tool:Activate()
+                    end
+                    forceTarget = nil
+                    lastAutoShoot = tick()
+                    hitCount += 1
+                end
+            end
+        end
+    end
+    
+    -- AUTO AIR
+    if autoAirFire then
+        local target = (silentLockEnabled and silentLockedTarget) or (camlock and lockedTarget)
+        if target and target.Character then
+            local hum = target.Character:FindFirstChild("Humanoid")
+            if hum then
+                local isAir = (hum:GetState() == Enum.HumanoidStateType.Jumping or hum:GetState() == Enum.HumanoidStateType.Freefall)
+                if isAir then
+                    if not airStart[target] then airStart[target] = tick() end
+                    if tick() - airStart[target] >= getgenv().airTriggerDelay and tick() - lastAutoFire >= getgenv().airFireRate then
+                        local tool = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Tool")
+                        if tool and not isKatana(tool) then
+                            forceTarget = target
+                            if MainRemote then
+                                local aimPos = getAimPos(target)
+                                pcall(function()
+                                    MainRemote:FireServer(ShootArg, aimPos)
+                                end)
+                            else
+                                tool:Activate()
+                            end
+                            forceTarget = nil
+                            lastAutoFire = tick()
+                            hitCount += 1
+                        end
+                    end
+                else
+                    airStart[target] = nil
+                end
+            end
+        end
+    end
+end)
+
+print("🚀 ULTRA v14 ZEE EDITION ЗАГРУЖЕН — Auto Shoot РАБОТАЕТ")
+print("Q — Silent Lock | J — Auto Shoot | N — Combo | F — Camlock | T — Trigger | B — Auto Air | V — Silent Aim | K — Blatant")
+if placeId == 99692075138533 then
+    print("🎯 Zee Hood mode active — используем ремоут: " .. (MainRemote and MainRemote.Name or "не найден"))
+end
